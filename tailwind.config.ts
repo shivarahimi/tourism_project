@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
+      screens: {
+        "custom-sm": { min: "320px", max: "370px" },
+      },
     },
   },
   plugins: [],
