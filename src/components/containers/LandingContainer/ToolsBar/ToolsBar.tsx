@@ -6,7 +6,8 @@ import {
   IToolsBarListData,
   ToolsBarListData,
 } from "#/src/components/core/data/Landing/Toolbar.data";
-import Image from "next/image";
+
+import { FullImage } from "#/src/components/common/FullImage/FullImage";
 
 interface IPropType {}
 
@@ -15,21 +16,21 @@ const ToolsBar: FC<IPropType> = () => {
   const data = ToolsBarListData();
   return (
     <section
-      className="bg-[#FAF5EE] p-8 lg:p-16"
+      className="bg-[#FAF5EE] p-4  py-[9rem]"
       style={{
         backgroundImage: "url('/images/landing/ToolsBar/bottom-shape.png')",
         backgroundPosition: "bottom center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="grid md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 ">
         {data.map((item: IToolsBarListData, index: number) => (
           <div
             key={index}
             className="flex flex-col xl:flex-row xl:items-center xl:justify-center"
           >
             <div className="flex justify-center items-center w-[100px] h-[100px] bg-white rounded-[4.5rem] mb-4 xl:mb-0 xl:mr-4">
-              <Image src={item.image} alt="عکس" width={50} height={50} />
+              <FullImage src={item.image} alt="عکس" width={50} height={50} />
             </div>
 
             <div className="mb-4 xl:mb-0">
