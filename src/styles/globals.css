@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../assets/css/index.css";
+
+body {
+  font-size: 14px !important;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
