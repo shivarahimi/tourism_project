@@ -1,3 +1,5 @@
+"use client";
+
 // base
 import { FC } from "react";
 
