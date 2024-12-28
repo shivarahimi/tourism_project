@@ -23,9 +23,7 @@ const Headers: FC<IPropType> = () => {
 
         <ul className="hidden md:flex md:items-center md:justify-center gap-3">
           {headerMenuList.map((item) => (
-            <>
-              <li key={item.key}>{item.title}</li>
-            </>
+            <li key={item.key}>{item.title}</li>
           ))}
         </ul>
 
@@ -43,12 +41,12 @@ const Headers: FC<IPropType> = () => {
                 className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50"
                 onClick={() => setIsOverlayVisible(false)} // بستن با کلیک روی پس‌زمینه
               >
-                <p>hiii</p>
                 {/* محتوای داخل لایه */}
                 <div
                   className="bg-white p-4 rounded shadow-lg relative"
                   onClick={(e) => e.stopPropagation()} // جلوگیری از بسته شدن هنگام کلیک داخل محتوای لایه
                 >
+                  <p className="text-black">hiii</p>
                   <button
                     onClick={() => setIsOverlayVisible(false)}
                     className="absolute top-2 right-2 text-gray-600 hover:text-black"
@@ -60,7 +58,6 @@ const Headers: FC<IPropType> = () => {
                 </div>
               </div>
             )}
-            {/* </div> */}
           </div>
         </section>
       </section>
