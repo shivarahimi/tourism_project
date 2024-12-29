@@ -5,7 +5,6 @@ import { ToolsBar } from "./ToolsBar/ToolsBar";
 import { Discover } from "./Discover/Discover";
 import { Intro } from "./Intro/Intro";
 
-import { Button, DatePicker } from "antd";
 
 interface IPropType {}
 
