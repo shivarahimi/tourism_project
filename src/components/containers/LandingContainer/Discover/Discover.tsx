@@ -140,6 +140,7 @@ const Discover: FC = () => {
           <FullImage src={camera.src} alt="دوربین" width={100} height={100} />
         </motion.span>
 
+        {/* نقشه */}
         <motion.span
           className="absolute bottom-[6rem]  right-[8rem] xl:right-[1rem] z-10 hidden md:block"
           animate={
