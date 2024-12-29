@@ -11,6 +11,10 @@ export default {
       backgroundImage: {
         "gt-gradient-1": "linear-gradient(90deg, #4300e7 0%, #7d00fc 100%)",
       },
+      colors: {
+        customPink: "#FAF5EE",
+        customBlack: "#363539",
+      },
 
       screens: {
         "custom-sm": { min: "320px", max: "370px" },

@@ -1,0 +1,53 @@
+.btn a {
+  z-index: 1;
+  color: #fff;
+  font-size: 19px;
+  overflow: hidden;
+  font-weight: 800;
+  padding: 13px 42px;
+  border-radius: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.btn a:before {
+  left: 0;
+  top: 0;
+  bottom: auto;
+  z-index: -1;
+  width: 100%;
+  height: 0%;
+  content: "";
+  border-radius: 50px;
+  position: absolute;
+  background-color: #000;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.btn a:hover:before {
+  top: auto;
+  height: 100%;
+  bottom: 0;
+}
+
+/* انیمیشن چرخش */
+.btn .textLink {
+  display: inline-block;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+.btn a:hover .textLink {
+  animation: gt-spin 0.5s ease-in-out forwards;
+}
+
+/* انیمیشن چرخش متن */
+@keyframes gt-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
