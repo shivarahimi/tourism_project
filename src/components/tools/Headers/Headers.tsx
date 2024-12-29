@@ -6,31 +6,33 @@ import { BsSearch } from "react-icons/bs";
 import { HeaderResponsive } from "./HeaderResponsive/HeaderResponsive";
 import { FaRegComment } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
+import { FullImage } from "../../common/FullImage/FullImage";
 
 interface IPropType {}
 
 const Headers: FC<IPropType> = () => {
+  const defaultImage = "/images/landing/Headers/logo-2.png";
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   return (
-    <header className="bg-gray-800 text-white">
+    <header className="bg-gray-800 text-white z-10">
       <section className="flex items-center justify-between w-[90%] mx-auto">
-        <section className="flex items-center justify-start">
+        <section className="flex items-center justify-start gap-3">
           <div className="md:hidden cursor-pointer">
             <HeaderResponsive />
           </div>
-          <div className="bg-gt-gradient-1">logo</div>
+          <div>
+            <FullImage src={defaultImage} alt="عکس" width={150} height={150} />
+          </div>
         </section>
 
         <ul className="hidden md:flex md:items-center md:justify-center gap-3">
           {headerMenuList.map((item) => (
-            <>
-              <li key={item.key}>{item.title}</li>
-            </>
+            <li key={item.key}>{item.title}</li>
           ))}
         </ul>
 
         <section>
-          <div className="hidden md:flex bg-gt-gradient-1 rounded-[40px] p-5 gap-3 cursor-pointer">
+          <div className="hidden md:flex bg-gt-gradient-1 rounded-[40px] py-5 px-10 gap-3 cursor-pointer">
             <div className="flex gap-1">
               <FaRegComment />
               <span className="hover:underline  hover:decoration-1 underline-offset-4 hover:underline-offset-2 transition-all duration-500">
@@ -43,12 +45,12 @@ const Headers: FC<IPropType> = () => {
                 className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50"
                 onClick={() => setIsOverlayVisible(false)} // بستن با کلیک روی پس‌زمینه
               >
-                <p>hiii</p>
                 {/* محتوای داخل لایه */}
                 <div
                   className="bg-white p-4 rounded shadow-lg relative"
                   onClick={(e) => e.stopPropagation()} // جلوگیری از بسته شدن هنگام کلیک داخل محتوای لایه
                 >
+                  <p className="text-black">hiii</p>
                   <button
                     onClick={() => setIsOverlayVisible(false)}
                     className="absolute top-2 right-2 text-gray-600 hover:text-black"
@@ -60,7 +62,6 @@ const Headers: FC<IPropType> = () => {
                 </div>
               </div>
             )}
-            {/* </div> */}
           </div>
         </section>
       </section>
