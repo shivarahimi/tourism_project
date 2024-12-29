@@ -1,3 +1,5 @@
+"use client";
+
 // base
 import Image from "next/image";
 import { FC } from "react";
@@ -5,8 +7,8 @@ import { FC } from "react";
 interface IFUllImagePropType {
   src: string;
   alt: string;
-  width: number | `${number}`;
-  height: number | `${number}`;
+  width?: number | `${number}`;
+  height?: number | `${number}`;
   className?: string;
   objectFit?: "contain" | "cover" | "fill";
   style?: React.CSSProperties;
