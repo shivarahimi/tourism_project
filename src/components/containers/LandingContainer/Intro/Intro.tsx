@@ -22,9 +22,9 @@ const Intro: FC<IPropType> = () => {
                 loop={true} // برای نمایش مداوم، این مقدار را true قرار دهید
                 cursor
                 cursorStyle="|"
-                typeSpeed={100}
-                deleteSpeed={50}
-                delaySpeed={1000} // فاصله زمانی بین متون
+                typeSpeed={130}
+                deleteSpeed={80}
+                delaySpeed={1300} // فاصله زمانی بین متون
               />
             </h1>
             <h1 className="text-7xl font-black mb-3">بعدی</h1>
