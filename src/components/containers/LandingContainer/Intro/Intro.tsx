@@ -1,14 +1,17 @@
 "use client";
 // base
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 // components
 import { TabSearchBox } from "./TabSearchBox/TabSearchBox";
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
+import { useInView, motion } from "framer-motion";
 
 interface IPropType {}
 
 const Intro: FC<IPropType> = () => {
+  const ref = useRef(null); // برای رفرنس دادن به بخش مورد نظر
+  const isInView = useInView(ref, { once: true }); // وقتی برای اولین بار وارد نمای کاربر شود
   const defaultImage = "/images/landing/Intro/banner_men.png";
   return (
     <section className="relative bg-black">
@@ -22,9 +25,9 @@ const Intro: FC<IPropType> = () => {
                 loop={true} // برای نمایش مداوم، این مقدار را true قرار دهید
                 cursor
                 cursorStyle="|"
-                typeSpeed={100}
-                deleteSpeed={50}
-                delaySpeed={1000} // فاصله زمانی بین متون
+                typeSpeed={130}
+                deleteSpeed={80}
+                delaySpeed={1300} // فاصله زمانی بین متون
               />
             </h1>
             <h1 className="text-7xl font-black mb-3">بعدی</h1>
@@ -36,9 +39,24 @@ const Intro: FC<IPropType> = () => {
             ستون و سطرآنچنان که لازم است
           </p>
         </div>
-        <div>
-          <FullImage src={defaultImage} alt="عکس" width={600} height={600} />
-        </div>
+        <motion.div
+          className="z-20"
+          animate={isInView ? { y: ["0px", "-10px", "0px"] } : { y: "0px" }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "easeInOut",
+          }}
+        >
+          <FullImage
+            src={defaultImage}
+            alt="عکس"
+            width={550}
+            height={550}
+            className="z-20"
+          />
+        </motion.div>
       </div>
       {/* <TabSearchBox /> */}
     </section>
