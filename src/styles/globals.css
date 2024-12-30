@@ -25,8 +25,3 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
-
-img {
-  width: auto;
-  height: auto;
-}

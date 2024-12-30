@@ -28,7 +28,7 @@ const FavoriteTourCard: FC<IFavoriteTourListType> = ({
           >
             <FullImage
               src={image}
-              alt="Eiffel Tower"
+              alt="tour"
               className={`${style.image}  transition-transform duration-500 ease-in-out `}
               width={248}
               height={351}

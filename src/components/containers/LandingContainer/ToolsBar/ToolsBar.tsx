@@ -6,13 +6,14 @@ import { FC } from "react";
 // lib
 import { motion } from "framer-motion";
 
+// components
+import { FullImage } from "#/src/components/common/FullImage/FullImage";
+
 // data
 import {
   IToolsBarListData,
   ToolsBarListData,
 } from "#/src/core/data/Landing/Toolbar.data";
-
-import { FullImage } from "#/src/components/common/FullImage/FullImage";
 
 const ToolsBar: FC = () => {
   // data
