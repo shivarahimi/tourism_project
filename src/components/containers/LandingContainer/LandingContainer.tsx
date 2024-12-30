@@ -1,10 +1,11 @@
 // base
 import { FC } from "react";
 // components
+import { Intro } from "./Intro/Intro";
 import { ToolsBar } from "./ToolsBar/ToolsBar";
 import { Discover } from "./Discover/Discover";
-import { Intro } from "./Intro/Intro";
-
+import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
+import { PopularVideos } from "./PopularVideos/PopularVideos";
 
 interface IPropType {}
 
@@ -14,6 +15,8 @@ const LandingContainer: FC<IPropType> = () => {
       <Intro />
       <ToolsBar />
       <Discover />
+      <FavoriteTour />
+      <PopularVideos />
     </section>
   );
 };

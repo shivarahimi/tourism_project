@@ -32,6 +32,7 @@ const FullImage: FC<IFUllImagePropType> = ({
         width={width}
         height={height}
         className={className}
+        priority
         style={{
           objectFit: objectFit ? objectFit : "cover",
           ...(style ? style : {}),

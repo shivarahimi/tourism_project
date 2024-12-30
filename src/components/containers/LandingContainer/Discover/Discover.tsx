@@ -9,6 +9,9 @@ import { motion } from "framer-motion";
 // components
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { FullButton } from "#/src/components/common/FullButton/FullButton";
+// anim
+import { RightToLeft } from "#/src/components/common/Animation/RightToLeft/RightToLeft";
+import { Mover } from "#/src/components/common/Animation/Mover/Mover";
 
 // image
 import girlsImage from "$/images/landing/Discover/grils.png";
@@ -57,16 +60,7 @@ const Discover: FC = () => {
     >
       <div className="relative">
         <div className="w-full h-full flex justify-center items-center">
-          <motion.div
-            className="z-20"
-            animate={isInView ? { y: ["0px", "-10px", "0px"] } : { y: "0px" }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
-            }}
-          >
+          <Mover duration={3} animName="easeInOut" className="z-20">
             <FullImage
               src={girlsImage.src}
               alt="عکس"
@@ -74,7 +68,7 @@ const Discover: FC = () => {
               height={550}
               className="z-20"
             />
-          </motion.div>
+          </Mover>
         </div>
 
         {/* کلاه */}
@@ -164,16 +158,16 @@ const Discover: FC = () => {
 
       {/*ستون دوم */}
       <div className="flex flex-col items-center justify-center">
-        <motion.div
+        <RightToLeft
+          duration={1}
+          delay={0.2}
+          animName="easeOut"
           className=" w-[95%] xl:w-[80%]"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
           <h1 className="text-customBlack text-[1.5rem] lg:text-[1.87rem]">
             کشف کردن
           </h1>
-        </motion.div>
+        </RightToLeft>
 
         <h1 className=" w-[95%] text-customBlack text-[2rem] md:text-[3.12rem] lg:text-[3.65rem] font-black block md:hidden  ">
           <div>زندگی کوتاه است و جهان گسترده است !</div>
