@@ -6,7 +6,7 @@ import { FC } from "react";
 // lib
 import { motion } from "framer-motion";
 
-// src
+// data
 import {
   IToolsBarListData,
   ToolsBarListData,
@@ -14,9 +14,7 @@ import {
 
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 
-interface IPropType {}
-
-const ToolsBar: FC<IPropType> = () => {
+const ToolsBar: FC = () => {
   // data
   const data = ToolsBarListData();
   return (

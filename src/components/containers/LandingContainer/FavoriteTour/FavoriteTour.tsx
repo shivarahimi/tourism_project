@@ -19,6 +19,7 @@ import {
 const FavoriteTour = () => {
   // data
   const favoriteTourList = favoriteTourListData;
+
   return (
     <section
       className=" h-full lg:h-[52rem] py-32 px-8"

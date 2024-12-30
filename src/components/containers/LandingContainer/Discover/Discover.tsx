@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 // components
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { FullButton } from "#/src/components/common/FullButton/FullButton";
+
 // anim
 import { RightToLeft } from "#/src/components/common/Animation/RightToLeft/RightToLeft";
 import { Mover } from "#/src/components/common/Animation/Mover/Mover";
