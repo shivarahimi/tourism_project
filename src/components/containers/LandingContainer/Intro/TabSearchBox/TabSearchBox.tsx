@@ -1,10 +1,11 @@
 "use client";
 // base
 import { FC, useState } from "react";
-import { BsSearch } from "react-icons/bs";
+import { BsFillCalendarFill, BsSearch } from "react-icons/bs";
 import { Tabs } from "antd";
 import { BiCloset } from "react-icons/bi";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaMapMarkedAlt, FaPlaneDeparture } from "react-icons/fa";
 
 interface IPropType {}
 
@@ -13,16 +14,22 @@ const TabSearchBox: FC<IPropType> = () => {
   const tabContent = [
     {
       id: 1,
+      title: "مقصد",
+      icon: <FaMapMarkedAlt />,
       label: "مقصد",
       description: "مقصد بعدی کجاست؟",
     },
     {
       id: 2,
+      title: "تور",
+      icon: <FaPlaneDeparture />,
       label: "فعالیت",
       description: "انتخاب فعالیت",
     },
     {
       id: 3,
+      title: "فعالیت",
+      icon: <BsFillCalendarFill />,
       label: "نوع تور",
       description: "انتخاب نوع تور",
     },
@@ -95,7 +102,12 @@ const TabSearchBox: FC<IPropType> = () => {
           const id = String(i + 1);
           return {
             key: id,
-            label: `Tab ${id}`,
+            label: (
+              <div className="flex items-center text-base gap-1">
+                {content.icon}
+                {content.title}
+              </div>
+            ),
             children: (
               <AnimatePresence mode="wait">
                 {activeTab === id && (
@@ -125,7 +137,7 @@ const TabSearchBox: FC<IPropType> = () => {
               </AnimatePresence>
             ),
 
-            icon: <BiCloset />,
+            // icon: <BiCloset />,
           };
         })}
       ></Tabs>
