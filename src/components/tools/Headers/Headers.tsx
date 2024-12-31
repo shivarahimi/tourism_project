@@ -7,6 +7,7 @@ import { HeaderResponsive } from "./HeaderResponsive/HeaderResponsive";
 import { FaRegComment } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { FullImage } from "../../common/FullImage/FullImage";
+import { Intro } from "../../containers/LandingContainer/Intro/Intro";
 
 interface IPropType {}
 
@@ -14,9 +15,11 @@ const Headers: FC<IPropType> = () => {
   const defaultImage = "/images/landing/Headers/logo-2.png";
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   return (
-    <header className="bg-gray-800 text-white z-10">
-      <section className="flex items-center justify-between w-[90%] mx-auto">
-        <section className="flex items-center justify-start gap-3">
+    <header className="relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] h-full md:h-screen bg-cover bg-center bg-no-repeat text-white py-8 z-50">
+      <div className="absolute inset-0 bg-black bg-opacity-90 z-0"></div>
+
+      <section className="flex items-center justify-between w-[90%] mx-auto z-50">
+        <section className="flex items-center justify-start gap-3 z-50">
           <div className="md:hidden cursor-pointer">
             <HeaderResponsive />
           </div>
@@ -25,13 +28,13 @@ const Headers: FC<IPropType> = () => {
           </div>
         </section>
 
-        <ul className="hidden md:flex md:items-center md:justify-center gap-3">
+        <ul className="hidden md:flex md:items-center md:justify-center font-bold	gap-5 z-50">
           {headerMenuList.map((item) => (
             <li key={item.key}>{item.title}</li>
           ))}
         </ul>
 
-        <section>
+        <section className="z-50">
           <div className="hidden md:flex bg-gt-gradient-1 rounded-[40px] py-5 px-10 gap-3 cursor-pointer">
             <div className="flex gap-1">
               <FaRegComment />
@@ -65,6 +68,7 @@ const Headers: FC<IPropType> = () => {
           </div>
         </section>
       </section>
+      <Intro />
     </header>
   );
 };

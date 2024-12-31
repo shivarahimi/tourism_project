@@ -12,7 +12,7 @@ interface IPropType {}
 const LandingContainer: FC<IPropType> = () => {
   return (
     <section>
-      <Intro />
+      {/* <Intro /> */}
       <ToolsBar />
       <Discover />
     </section>

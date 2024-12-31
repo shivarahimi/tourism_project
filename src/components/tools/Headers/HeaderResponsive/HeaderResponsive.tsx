@@ -17,7 +17,7 @@ const HeaderResponsive: FC<IPropType> = () => {
       </section>
       {showMenu && (
         <section
-          className="fixed top-0 left-0 w-screen h-screen bg-[#7d7d7d] opacity-60 z-50"
+          className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 opacity-60 z-50"
           onClick={() => setShowMenu(false)}
         ></section>
       )}
