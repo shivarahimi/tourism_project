@@ -17,7 +17,6 @@ const Intro: FC<IPropType> = () => {
     <section className="relative ">
       <div className="flex flex-col-reverse md:flex-row items-center md:justify-between text-white w-[90%] mx-auto">
         <div className="text-center max-w-2xl p-5">
-          {/* padding: 235px 0px 105px; */}
           <div className="text-7xl">کشف</div>
           <div className="flex items-center justify-center mb-3">
             <h1 className="text-7xl font-black">
