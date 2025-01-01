@@ -40,61 +40,7 @@ const TabSearchBox: FC<IPropType> = () => {
     exit: { opacity: 0, x: -50 },
   };
   return (
-    // <div className="flex flex-col-reverse md:flex-row items-center md:justify-between absolute bottom-10 right-20 gap-12 p-5 rounded-[100px] w-[915px] bg-white text-black font-extrabold">
-    //   {/* Tab headers */}
-    //   <div className="flex border-b">
-    //     {tabContent.map((tab) => (
-    //       <button
-    //         key={tab.id}
-    //         onClick={() => setActiveTab(tab.id)}
-    //         className={`px-4 py-2 text-sm font-medium ${
-    //           activeTab === tab.id
-    //             ? "text-blue-600 border-b-2 border-blue-600"
-    //             : "text-gray-600"
-    //         }`}
-    //       >
-    //         {tab.label}
-    //       </button>
-    //     ))}
-    //   </div>
-
-    //   {/* Tab content */}
-    //   <div className="mt-4">
-    //     <div className="space-y-4">
-    //       {tabContent.map((tab) => (
-    //         <div
-    //           key={tab.id}
-    //           className={`${
-    //             activeTab === tab.id ? "block" : "hidden"
-    //           } transition-all`}
-    //         >
-    //           <h3 className="text-lg font-semibold">{tab.label}</h3>
-    //           <p className="text-gray-700">{tab.description}</p>
-    //           <div className="flex items-center justify-center gap-2 rounded-[40px] text-white text-lg font-bold py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 mt-4">
-    //             <svg
-    //               xmlns="http://www.w3.org/2000/svg"
-    //               fill="none"
-    //               viewBox="0 0 24 24"
-    //               strokeWidth="2"
-    //               stroke="currentColor"
-    //               className="w-5 h-5"
-    //             >
-    //               <path
-    //                 strokeLinecap="round"
-    //                 strokeLinejoin="round"
-    //                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-    //               />
-    //             </svg>
-    //             <button>
-    //               <p>جستجو</p>
-    //             </button>
-    //           </div>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </div>
-    <section className="flex flex-col-reverse md:flex-row items-center md:justify-between absolute md:bottom-10 left-44 md:right-20 gap-12 p-5 md:w-[915px] text-black font-extrabold">
+    <section className="flex flex-col-reverse lg:flex-row items-center md:justify-between absolute lg:bottom-34 lg:right-30 xl:bottom-24 xl:right-20 gap-12 p-5 text-black font-extrabold">
       <Tabs
         activeKey={activeTab}
         onChange={(key) => setActiveTab(key)}
@@ -103,7 +49,7 @@ const TabSearchBox: FC<IPropType> = () => {
           return {
             key: id,
             label: (
-              <div className="flex items-center text-base gap-1">
+              <div className="flex items-center text-base z-0 gap-1">
                 {content.icon}
                 {content.title}
               </div>
@@ -118,7 +64,7 @@ const TabSearchBox: FC<IPropType> = () => {
                     exit="exit"
                     variants={variants}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="flex flex-col md:flex-row items-center justify-center md:gap-40 bg-white text-black p-10 md:p-3 rounded-2xl md:rounded-[100px]"
+                    className="flex flex-col lg:flex-row items-center justify-center lg:gap-40 bg-white text-black p-10 md:p-3 rounded-2xl lg:rounded-[100px]"
                   >
                     {tabContent.map((item, index) => (
                       <div key={index} className="mb-4 w-[100px]">
@@ -136,32 +82,9 @@ const TabSearchBox: FC<IPropType> = () => {
                 )}
               </AnimatePresence>
             ),
-
-            // icon: <BiCloset />,
           };
         })}
       ></Tabs>
-
-      {/* <div className="flex flex-col-reverse md:flex-row items-center md:justify-between absolute bottom-40 right-20 gap-12 p-5 rounded-[100px] w-[915px] bg-white text-black font-extrabold	">
-        <div>
-          <h3>مقصد</h3>
-          <span>مقصد بعدی کجاست؟</span>
-        </div>
-        <div>
-          <h3>فعالیت</h3>
-          <span>انتخاب فعالیت</span>
-        </div>
-        <div>
-          <h3>نوع تور</h3>
-          <span>انتخاب نوع تور</span>
-        </div>
-        <div className="flex items-center justify-center gap-2 rounded-[40px] text-white text-lg font-bold py-5 px-9 bg-gt-gradient-1">
-          <BsSearch />
-          <button>
-            <p>جستجو</p>
-          </button>
-        </div>
-      </div> */}
     </section>
   );
 };
