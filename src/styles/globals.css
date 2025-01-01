@@ -35,24 +35,24 @@ body {
 }
 .ant-tabs-nav .ant-tabs-nav-wrap {
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
   right: 60px;
   top: 32px;
 }
-.ant-tabs-nav-wrap .ant-tabs-nav-list .ant-tabs-ink-bar{
+.ant-tabs-nav-wrap .ant-tabs-nav-list .ant-tabs-ink-bar {
   width: 0px !important;
 }
-.ant-tabs-tab-btn{
+.ant-tabs-tab-btn {
   color: white;
 }
-.ant-tabs-nav-list .ant-tabs-tab{
+.ant-tabs-nav-list .ant-tabs-tab {
   margin: 0px !important;
 }
-.ant-tabs-nav::before{
+.ant-tabs-nav::before {
   right: 0 !important;
   left: 0 !important;
   border-bottom: none !important;
-  content: '' !important;
+  content: "" !important;
 }
 /* .gt-booking-tab-btn li .nav-link.active{
   color: #04fdee !important;
