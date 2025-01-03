@@ -50,3 +50,34 @@ body {
   display: block;
   object-fit: cover;
 }
+/* tab header intro  */
+.ant-tabs-nav-list {
+  background: linear-gradient(90deg, #4300e7 0%, #7d00fc 100%);
+  border-radius: 100px;
+  padding: 10px 50px 10px;
+  gap: 20px;
+}
+.ant-tabs-nav .ant-tabs-nav-wrap {
+  position: absolute;
+  z-index: 10;
+  right: 60px;
+  top: 32px;
+}
+.ant-tabs-nav-wrap .ant-tabs-nav-list .ant-tabs-ink-bar {
+  width: 0px !important;
+}
+.ant-tabs-tab-btn {
+  color: white;
+}
+.ant-tabs-nav-list .ant-tabs-tab {
+  margin: 0px !important;
+}
+.ant-tabs-nav::before {
+  right: 0 !important;
+  left: 0 !important;
+  border-bottom: none !important;
+  content: "" !important;
+}
+/* .gt-booking-tab-btn li .nav-link.active{
+  color: #04fdee !important;
+} */
