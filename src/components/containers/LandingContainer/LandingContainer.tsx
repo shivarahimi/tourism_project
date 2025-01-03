@@ -7,16 +7,14 @@ import { Discover } from "./Discover/Discover";
 import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
 import { PopularVideos } from "./PopularVideos/PopularVideos";
 
-interface IPropType {}
-
-const LandingContainer: FC<IPropType> = () => {
+const LandingContainer: FC = () => {
   return (
     <section>
       <Intro />
-      <ToolsBar />
+      <ToolsBar dataType="toolsBar" />
       <Discover />
       <FavoriteTour />
-      <PopularVideos />
+      <PopularVideos dataType="popularVideos" />
     </section>
   );
 };

@@ -57,7 +57,7 @@ const Discover: FC = () => {
       ref={sectionRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="grid grid-cols-1 xl:grid xl:grid-cols-[43%_57%]"
+      className="grid grid-cols-1 xl:grid xl:grid-cols-[43%_57%] 2xl:!max-w-[1400px] 2xl:!mx-auto mb-[6rem] "
     >
       <div className="relative">
         <div className="w-full h-full flex justify-center items-center">
@@ -67,14 +67,14 @@ const Discover: FC = () => {
               alt="عکس"
               width={550}
               height={550}
-              className="z-20"
+              className="z-20 w-[550px] md:w-[550px] 2xl:w-[600px]"
             />
           </Mover>
         </div>
 
         {/* کلاه */}
         <motion.span
-          className="absolute top-[120px] right-[90px] xl:right-0 hidden md:block"
+          className="absolute top-[120px] right-[90px] lg:right-[40px] hidden md:block"
           animate={
             isInView
               ? {
@@ -90,12 +90,18 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={hat.src} alt="کلاه" width={120} height={120} />
+          <FullImage
+            src={hat.src}
+            alt="کلاه"
+            width={120}
+            height={120}
+            className="] md:w-[140px] lg:w-[120px] "
+          />
         </motion.span>
 
         {/* ابر */}
         <motion.span
-          className="absolute top-[167px] left-[100px] xl:left-0 z-10 hidden md:block"
+          className="absolute top-[167px] left-[75px] xl:left-0 z-10 hidden md:block"
           animate={
             isInView
               ? {
@@ -111,12 +117,18 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={cloud.src} alt="ابر" width={140} height={140} />
+          <FullImage
+            src={cloud.src}
+            alt="ابر"
+            width={140}
+            height={140}
+            className=" md:w-[140px] lg:w-[140px] "
+          />
         </motion.span>
 
         {/* دوربین */}
         <motion.span
-          className="absolute bottom-[164px] !left-[50px] xl:!left-[-80px] z-10 hidden md:block"
+          className="absolute bottom-[164px] !left-[13px] xl:!left-[-80px] z-10 hidden md:block"
           animate={
             isInView
               ? {
@@ -132,12 +144,18 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={camera.src} alt="دوربین" width={100} height={100} />
+          <FullImage
+            src={camera.src}
+            alt="دوربین"
+            width={100}
+            height={100}
+            className=" md:w-[110px] lg:w-[100px] "
+          />
         </motion.span>
 
         {/* نقشه */}
         <motion.span
-          className="absolute bottom-[6rem]  right-[8rem] xl:right-[1rem] z-10 hidden md:block"
+          className="absolute bottom-[6rem]  right-[4rem] xl:right-[1rem] z-10 hidden md:block"
           animate={
             isInView
               ? {
@@ -153,7 +171,13 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={map.src} alt="نقشه" width={70} height={70} />
+          <FullImage
+            src={map.src}
+            alt="نقشه"
+            width={70}
+            height={70}
+            className=" md:w-[110px] lg:w-[70px] "
+          />
         </motion.span>
       </div>
 

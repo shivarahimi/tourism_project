@@ -12,6 +12,7 @@ interface IFUllImagePropType {
   className?: string;
   objectFit?: "contain" | "cover" | "fill";
   style?: React.CSSProperties;
+  quality?: number;
 }
 
 const FullImage: FC<IFUllImagePropType> = ({
@@ -22,6 +23,7 @@ const FullImage: FC<IFUllImagePropType> = ({
   className,
   objectFit,
   style,
+  quality,
 }) => {
   const defaultImage = "/images/general/img1.jpg";
   return (
@@ -31,8 +33,9 @@ const FullImage: FC<IFUllImagePropType> = ({
         alt={alt}
         width={width}
         height={height}
-        className={` w-auto h-auto ${className}`}
+        className={`w-auto h-auto ${className}`}
         priority
+        quality={quality}
         style={{
           objectFit: objectFit ? objectFit : "cover",
           ...(style ? style : {}),

@@ -28,7 +28,7 @@ const TitleLanding: FC<IPropType> = ({ className, title1, title2 }) => {
         </RightToLeft>
       </div>
 
-      <h1 className="flex justify-center items-center text-[2.5rem] lg:text-[3.75rem] font-black text-customBlack">
+      <h1 className="flex justify-center items-center text-[2rem] lg:text-[3.75rem] font-black text-customBlack">
         <div> {title2}</div>
       </h1>
     </>
