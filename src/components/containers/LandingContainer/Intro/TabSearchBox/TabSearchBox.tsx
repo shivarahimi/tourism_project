@@ -1,10 +1,9 @@
 "use client";
 // base
+import { Tabs } from "antd";
+import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
 import { BsFillCalendarFill, BsSearch } from "react-icons/bs";
-import { Tabs } from "antd";
-import { BiCloset } from "react-icons/bi";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaMapMarkedAlt, FaPlaneDeparture } from "react-icons/fa";
 
 interface IPropType {}
