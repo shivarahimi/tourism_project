@@ -18,47 +18,24 @@ import { slidesListData } from "#/src/core/data/Landing/slides.data";
 // style
 import style from "./slidesVideos.module.css";
 // icon
-import { useRef, useEffect } from "react";
 import { CiPlay1 } from "react-icons/ci";
 
 const SlideVideos = () => {
-  // برای کلیک دکمه های کاستوم
-  const prevRef = useRef<HTMLDivElement>(null);
-  const nextRef = useRef<HTMLDivElement>(null);
-  const swiperRef = useRef<any>(null);
-
-  useEffect(() => {
-    if (
-      swiperRef.current &&
-      swiperRef.current.params &&
-      swiperRef.current.params.navigation
-    ) {
-      swiperRef.current.params.navigation.prevEl = prevRef.current;
-      swiperRef.current.params.navigation.nextEl = nextRef.current;
-      swiperRef.current.navigation.init();
-      swiperRef.current.navigation.update();
-    }
-  }, []);
-
   return (
-    <div className={`${style.swiperContainer}  2xl:max-w-[1400px] 2xl:mx-auto`}>
+    <div className={`${style.swiperContainer} 2xl:max-w-[1400px] 2xl:mx-auto`}>
       <Swiper
-        className="mySwiper absolute top-[-90px] mt-28"
+        className="mySwiper absolute top-[-60px] md:top-[-90px] mt-28"
         modules={[Navigation, Keyboard]}
         spaceBetween={15}
         navigation={{
-          nextEl: nextRef.current,
-          prevEl: prevRef.current,
+          nextEl: `.${style.customSwiperButtonNext}`,
+          prevEl: `.${style.customSwiperButtonPrev}`,
         }}
         keyboard={{
           enabled: true,
         }}
-        scrollbar={{ draggable: true }}
-        loop={true}
+        // loop={true}
         grabCursor={true}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
         breakpoints={{
           1200: {
             slidesPerView: 4,
@@ -77,7 +54,7 @@ const SlideVideos = () => {
         {slidesListData.map((item) => (
           <SwiperSlide
             key={item.id}
-            className={` mb-[30px] flex  ${style.swiperSlide} `}
+            className={`mb-[30px] flex ${style.swiperSlide}`}
           >
             <div className={`relative w-[100%] ${style.customImageContainer}`}>
               <FullImage
@@ -86,14 +63,14 @@ const SlideVideos = () => {
                 width={600}
                 height={436}
                 quality={100}
-                className={`!rounded-xl mx-auto w-[100%]  ${style.customImage}`}
+                className={`!rounded-xl mx-auto w-[100%] ${style.customImage}`}
                 objectFit="cover"
               />
 
               <div className={`${style.overlayTopLeft}`}></div>
-              <div className={`${style.overlayBottomRight} `}></div>
+              <div className={`${style.overlayBottomRight}`}></div>
 
-              <div className={`${style.playButtonContainer}`}>
+              <div className={`${style.playButtonContainer} mb-12`}>
                 <button className={`${style.playButton} relative`}>
                   <CiPlay1 />
                 </button>
@@ -108,17 +85,13 @@ const SlideVideos = () => {
       </Swiper>
 
       {/* Custom Navigation Buttons */}
-      <div className={`flex justify-center ${style.swiperContainer}`}>
-        <div
-          className={`${style.customSwiperButtonPrev} customSwiperButtonPrev`}
-          ref={prevRef}
-        >
+      <div
+        className={`flex justify-center ${style.swiperContainer} !mt-[-2rem]`}
+      >
+        <div className={`${style.customSwiperButtonPrev}`}>
           <FaArrowRight size={14} color="black" />
         </div>
-        <div
-          className={`${style.customSwiperButtonNext} customSwiperButtonNext`}
-          ref={nextRef}
-        >
+        <div className={`${style.customSwiperButtonNext}`}>
           <FaArrowLeft size={14} color="black" />
         </div>
       </div>

@@ -33,7 +33,7 @@ const PopularVideos: FC<ISharePropType> = ({ dataType }) => {
       >
         <SlideVideos />
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 ">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 max-w-[1140px] mx-auto ">
           <FeatureItem data={data} />
         </div>
       </section>

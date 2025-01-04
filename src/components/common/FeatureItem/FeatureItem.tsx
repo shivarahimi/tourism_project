@@ -6,9 +6,13 @@ import { FC } from "react";
 // lib
 import { motion } from "framer-motion";
 
+// componnets
+import { FullImage } from "../FullImage/FullImage";
+
 // data
 import { IFeatureItemDataType } from "#/src/core/data/Landing/Toolbar.data";
-import { FullImage } from "../FullImage/FullImage";
+// enum
+import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 
 interface FeatureItemProps {
   data: IFeatureItemDataType[]; // دریافت داده‌ها
@@ -18,20 +22,22 @@ interface FeatureItemProps {
 const FeatureItem: FC<FeatureItemProps> = ({ data, dataType }) => {
   // var
   const toolsBar =
-    dataType === "toolsBar"
+    dataType === dataTypePageEnum.toolsBar
       ? " flex flex-col xl:flex-row xl:items-center xl:justify-center"
-      : " flex flex-col justify-center items-center ";
+      : " flex flex-col justify-center items-center pt-16 md:pt-0 ";
 
   const toolsBarTitle =
-    dataType === "toolsBar" ? "text-right " : "text-center mt-4";
+    dataType === dataTypePageEnum.toolsBar ? "text-right " : "text-center mt-4";
 
   const toolsBarDesc =
-    dataType === "toolsBar"
-      ? "  sm:w-[21rem] md:w-[20rem] lg:w-[26rem] xl:w-[18rem] "
-      : " sm:w-[26rem] text-center md:w-[20rem] lg:w-[25rem] mt-4 ";
+    dataType === dataTypePageEnum.toolsBar
+      ? " md:px-[0.6rem]  xl:px-[0.6rem]  lg:pt-[0.6rem] xl:w-[18rem] leading-6  text-justify "
+      : "px-4 md:px-[0.6rem] lg:px-16 xl:px-[0.6rem] leading-8 text-center";
 
   const toolsBarDetailDesc =
-    dataType === "toolsBar" ? "  mb-4 xl:mb-0 mr-4" : " mt-4 ";
+    dataType === "toolsBar"
+      ? "  mb-4 xl:mb-0 mr-0 xl:mr-4 px-0 xl:px-[0.6rem]"
+      : " ";
 
   return (
     <>
@@ -49,16 +55,16 @@ const FeatureItem: FC<FeatureItemProps> = ({ data, dataType }) => {
               ease: "easeOut",
             }}
           >
-            <FullImage src={item.image} alt="عکس" width={50} height={50} />
+            <FullImage src={item.image} alt="عکس" width={70} height={70} />
           </motion.div>
-          <div className={`${toolsBarDetailDesc}`}>
+          <div className={`${toolsBarDetailDesc} xl:pt-8`}>
             <h3
-              className={`${toolsBarTitle} text-2xl font-extrabold  xl:pr-[0.8rem] mt-4 md:mt-0`}
+              className={`${toolsBarTitle} text-2xl font-extrabold   mt-4 md:mt-0 xl:pr-[0.8rem]`}
             >
               {item.title}
             </h3>
             <p
-              className={`${toolsBarDesc} custom-sm:w-[16rem] text-[1.12rem] text-customBlack text-justify leading-8 xl:p-4}`}
+              className={`${toolsBarDesc}  text-base text-customBlack  xl:p-4}`}
             >
               {item.desc}
             </p>
@@ -70,3 +76,9 @@ const FeatureItem: FC<FeatureItemProps> = ({ data, dataType }) => {
 };
 
 export default FeatureItem;
+
+// ***
+// sm:w-[26rem] text-center md:w-[20rem] lg:w-[25rem] mt-4
+
+// sm:w-[21rem] md:w-[20rem] lg:w-[26rem] xl:w-[18rem]
+// custom-sm:w-[15rem] sm:w-[21rem]

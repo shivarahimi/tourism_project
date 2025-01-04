@@ -74,7 +74,7 @@
   .customSwiperButtonPrev {
     position: absolute;
     right: 5px;
-    bottom: 13rem;
+    bottom: 19rem;
   }
 }
 
@@ -82,7 +82,7 @@
   .customSwiperButtonNext {
     position: absolute;
     left: -1px;
-    bottom: 13rem;
+    bottom: 19rem;
   }
 }
 
@@ -90,14 +90,14 @@
   .customSwiperButtonPrev {
     position: absolute;
     right: 28px;
-    bottom: 12rem;
+    bottom: 20rem;
   }
 }
 @media (min-width: 769px) and (max-width: 1023px) {
   .customSwiperButtonNext {
     position: absolute;
     left: 15px;
-    bottom: 12rem;
+    bottom: 20rem;
   }
 }
 
@@ -105,7 +105,7 @@
   .customSwiperButtonNext,
   .customSwiperButtonPrev {
     position: absolute;
-    bottom: 14rem;
+    bottom: 20rem;
   }
 
   .customSwiperButtonNext {

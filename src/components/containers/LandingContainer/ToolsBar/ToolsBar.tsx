@@ -21,7 +21,7 @@ const ToolsBar: FC<ISharePropType> = ({ dataType }) => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:max-w-[1400px] 2xl:mx-auto pb-4 ">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:max-w-[1280px] 2xl:mx-auto pb-4 ">
         <FeatureItem data={data} dataType={dataType} />
       </div>
     </section>
