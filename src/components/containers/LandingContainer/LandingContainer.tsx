@@ -6,6 +6,7 @@ import { Discover } from "./Discover/Discover";
 import { Intro } from "./Intro/Intro";
 
 import { Button, DatePicker } from "antd";
+import { ExploreEvent } from "./ExploreEvent/ExploreEvent";
 
 interface IPropType {}
 
@@ -15,6 +16,7 @@ const LandingContainer: FC<IPropType> = () => {
       {/* <Intro /> */}
       <ToolsBar />
       <Discover />
+      <ExploreEvent />
     </section>
   );
 };
