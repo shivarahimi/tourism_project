@@ -12,11 +12,16 @@ import { Intro } from "../../containers/LandingContainer/Intro/Intro";
 interface IPropType {}
 
 const Headers: FC<IPropType> = () => {
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const toggleMenu = (menuKey: any) => {
+    setOpenMenu(openMenu === menuKey ? null : menuKey);
+  };
   const defaultImage = "/images/landing/Headers/logo-2.png";
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   return (
-    <header className="relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] h-[300vh] xl:h-[120vh] bg-cover bg-center bg-no-repeat text-white py-8 z-50">
-      <div className="absolute inset-0 bg-black bg-opacity-90 z-0"></div>
+    <header className="header relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] xl:h-[120vh] bg-cover bg-center bg-no-repeat text-white py-8">
+      <div className="absolute inset-0 bg-black bg-opacity-90"></div>
 
       <section className="flex items-center justify-between w-[90%] mx-auto z-50">
         <section className="flex items-center justify-start gap-3 z-50">
@@ -35,7 +40,6 @@ const Headers: FC<IPropType> = () => {
                 {item.title}
                 <FaAngleDown />
               </div>
-              {/* ==== sub menu ==== */}
               {item.subMenu?.length > 0 && (
                 <ul className="absolute right-0 mt-2 hidden w-48 bg-gt-gradient-1 rounded-md shadow-lg group-hover:block">
                   {item.subMenu.map((subItem: any) => (
@@ -55,7 +59,7 @@ const Headers: FC<IPropType> = () => {
                             >
                               <a
                                 href={childItem.href}
-                                className="block text-white"
+                                className=" text-white cursor-pointer"
                               >
                                 {childItem.title}
                               </a>

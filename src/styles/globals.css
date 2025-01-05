@@ -15,18 +15,6 @@ body {
   height: 2000px;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -50,6 +38,25 @@ body {
   display: block;
   object-fit: cover;
 }
+/* bg header  */
+/* .header {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: #070813;
+  -webkit-mask-image: url(/images/landing/Headers/banner-shape1.png);
+  mask-image: url(/images/landing/Headers/banner-shape1.png);
+} */
 /* tab header intro  */
 .ant-tabs-nav-list {
   background: linear-gradient(90deg, #4300e7 0%, #7d00fc 100%);
