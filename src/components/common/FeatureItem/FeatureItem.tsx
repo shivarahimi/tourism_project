@@ -35,42 +35,58 @@ const FeatureItem: FC<FeatureItemProps> = ({ data, dataType }) => {
       : "px-4 md:px-[0.6rem] lg:px-16 xl:px-[0.6rem] leading-8 text-center";
 
   const toolsBarDetailDesc =
-    dataType === "toolsBar"
+    dataType === dataTypePageEnum.toolsBar
       ? "  mb-4 xl:mb-0 mr-0 xl:mr-4 px-0 xl:px-[0.6rem]"
       : " ";
 
+  const isToolsBar = dataType === dataTypePageEnum.toolsBar;
+
   return (
     <>
-      {data.map((item, index) => (
-        <div key={index} className={`${toolsBar}`}>
+      {data.map((item, index) => {
+        const isMotionDiv = !isToolsBar;
+        return (
           <motion.div
-            className="flex justify-center items-center w-[100px] h-[100px] bg-white rounded-[4.5rem] mb-4 xl:mb-0 xl:mr-4"
-            initial={{ y: 0 }}
-            whileHover={{
-              y: ["0px", "-20px", "0px", "-10px", "0px"],
-              scale: [1, 1.1, 1, 1.05, 1],
-            }}
+            key={index}
+            initial={isMotionDiv ? { y: 100, opacity: 0 } : { y: 0 }}
+            animate={isMotionDiv ? { y: 0, opacity: 1 } : { y: 0 }}
             transition={{
               duration: 0.8,
               ease: "easeOut",
+              delay: isMotionDiv ? index * 0.2 : 0, // ایجاد تأخیر فقط در صورت استفاده از انیمیشن
             }}
           >
-            <FullImage src={item.image} alt="عکس" width={70} height={70} />
+            <div className={`${toolsBar}`}>
+              <motion.div
+                className="flex justify-center items-center w-[100px] h-[100px] bg-white rounded-[4.5rem] mb-4 xl:mb-0 xl:mr-4"
+                initial={{ y: 0 }}
+                whileHover={{
+                  y: ["0px", "-20px", "0px", "-10px", "0px"],
+                  scale: [1, 1.1, 1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+              >
+                <FullImage src={item.image} alt="عکس" width={70} height={70} />
+              </motion.div>
+              <div className={`${toolsBarDetailDesc} xl:pt-8`}>
+                <h3
+                  className={`${toolsBarTitle} text-2xl font-extrabold mt-4 md:mt-0 xl:pr-[0.8rem]`}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  className={`${toolsBarDesc} text-base text-customBlack xl:p-4`}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            </div>
           </motion.div>
-          <div className={`${toolsBarDetailDesc} xl:pt-8`}>
-            <h3
-              className={`${toolsBarTitle} text-2xl font-extrabold   mt-4 md:mt-0 xl:pr-[0.8rem]`}
-            >
-              {item.title}
-            </h3>
-            <p
-              className={`${toolsBarDesc}  text-base text-customBlack  xl:p-4}`}
-            >
-              {item.desc}
-            </p>
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </>
   );
 };

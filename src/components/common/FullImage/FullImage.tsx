@@ -33,7 +33,7 @@ const FullImage: FC<IFUllImagePropType> = ({
         alt={alt}
         width={width}
         height={height}
-        className={`w-auto h-auto ${className}`}
+        className={` ${className}`}
         priority
         quality={quality}
         style={{

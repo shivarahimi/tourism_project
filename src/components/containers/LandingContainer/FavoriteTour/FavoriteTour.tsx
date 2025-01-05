@@ -16,7 +16,7 @@ const FavoriteTour = () => {
 
   return (
     <section
-      className=" h-full lg:h-[52rem] py-32 px-8 "
+      className=" h-full  py-32 px-8 "
       style={{
         backgroundImage:
           "url('/images/landing/FavoriteTour/bottom-shape2.png')",
@@ -24,7 +24,7 @@ const FavoriteTour = () => {
     >
       <TitleLanding title1=" کشف کردن" title2="مورد علاقه ترین مکان تور" />
 
-      <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-5 2xl:max-w-[1400px] 2xl:mx-auto">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3  xl:grid-cols-5 2xl:grid-cols-5 2xl:max-w-[1400px] 2xl:mx-auto md:gap-8">
         {favoriteTourList.map((item: IFavoriteTourListType) => (
           <FavoriteTourCard key={item.id} {...item} />
         ))}
