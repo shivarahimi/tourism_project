@@ -5,14 +5,11 @@ import { FC } from "react";
 import { TitleLanding } from "#/src/components/common/TItleLanding/TitleLanding";
 
 import { SlideVideos } from "./SlideVideos/SlideVideos";
-import {
-  FeatureItemData,
-  IFeatureItemDataType,
-} from "#/src/core/data/Landing/Toolbar.data";
+import { FeatureItemData } from "#/src/core/data/Landing/Toolbar.data";
 import FeatureItem from "#/src/components/common/FeatureItem/FeatureItem";
 
 interface ISharePropType {
-  dataType: "toolsBar" | "popularVideos"; // برای مشخص کردن نوع داده
+  dataType: "toolsBar" | "popularVideos";
 }
 
 const PopularVideos: FC<ISharePropType> = ({ dataType }) => {
