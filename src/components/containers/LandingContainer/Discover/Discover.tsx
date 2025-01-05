@@ -10,6 +10,10 @@ import { motion } from "framer-motion";
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { FullButton } from "#/src/components/common/FullButton/FullButton";
 
+// anim
+import { RightToLeft } from "#/src/components/common/Animation/RightToLeft/RightToLeft";
+import { Mover } from "#/src/components/common/Animation/Mover/Mover";
+
 // image
 import girlsImage from "$/images/landing/Discover/grils.png";
 import camera from "$/images/landing/Discover/camera.png";
@@ -53,33 +57,24 @@ const Discover: FC = () => {
       ref={sectionRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="grid grid-cols-1 xl:grid xl:grid-cols-[43%_57%]"
+      className="grid grid-cols-1 xl:grid xl:grid-cols-[43%_57%] 2xl:!max-w-[1400px] 2xl:!mx-auto mb-[6rem] "
     >
       <div className="relative">
         <div className="w-full h-full flex justify-center items-center">
-          <motion.div
-            className="z-20"
-            animate={isInView ? { y: ["0px", "-10px", "0px"] } : { y: "0px" }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
-            }}
-          >
+          <Mover duration={3} animName="easeInOut" className="z-20">
             <FullImage
               src={girlsImage.src}
               alt="عکس"
               width={550}
               height={550}
-              className="z-20"
+              className="z-20 w-[550px] md:w-[550px] 2xl:w-[600px]"
             />
-          </motion.div>
+          </Mover>
         </div>
 
         {/* کلاه */}
         <motion.span
-          className="absolute top-[120px] right-[90px] xl:right-0 hidden md:block"
+          className="absolute top-[120px] right-[90px] lg:right-[40px] hidden md:block"
           animate={
             isInView
               ? {
@@ -95,12 +90,18 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={hat.src} alt="کلاه" width={120} height={120} />
+          <FullImage
+            src={hat.src}
+            alt="کلاه"
+            width={120}
+            height={120}
+            className="] md:w-[140px] lg:w-[120px] "
+          />
         </motion.span>
 
         {/* ابر */}
         <motion.span
-          className="absolute top-[167px] left-[100px] xl:left-0 z-10 hidden md:block"
+          className="absolute top-[167px] left-[75px] xl:left-0 z-10 hidden md:block"
           animate={
             isInView
               ? {
@@ -116,12 +117,18 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={cloud.src} alt="ابر" width={140} height={140} />
+          <FullImage
+            src={cloud.src}
+            alt="ابر"
+            width={140}
+            height={140}
+            className=" md:w-[140px] lg:w-[140px] "
+          />
         </motion.span>
 
         {/* دوربین */}
         <motion.span
-          className="absolute bottom-[164px] !left-[50px] xl:!left-[-80px] z-10 hidden md:block"
+          className="absolute bottom-[164px] !left-[13px] xl:!left-[-80px] z-10 hidden md:block"
           animate={
             isInView
               ? {
@@ -137,12 +144,18 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={camera.src} alt="دوربین" width={100} height={100} />
+          <FullImage
+            src={camera.src}
+            alt="دوربین"
+            width={100}
+            height={100}
+            className=" md:w-[110px] lg:w-[100px] "
+          />
         </motion.span>
 
         {/* نقشه */}
         <motion.span
-          className="absolute bottom-[6rem]  right-[8rem] xl:right-[1rem] z-10 hidden md:block"
+          className="absolute bottom-[6rem]  right-[4rem] xl:right-[1rem] z-10 hidden md:block"
           animate={
             isInView
               ? {
@@ -158,22 +171,28 @@ const Discover: FC = () => {
             repeatType: "loop",
           }}
         >
-          <FullImage src={map.src} alt="نقشه" width={70} height={70} />
+          <FullImage
+            src={map.src}
+            alt="نقشه"
+            width={70}
+            height={70}
+            className=" md:w-[110px] lg:w-[70px] "
+          />
         </motion.span>
       </div>
 
       {/*ستون دوم */}
       <div className="flex flex-col items-center justify-center">
-        <motion.div
+        <RightToLeft
+          duration={1}
+          delay={0.2}
+          animName="easeOut"
           className=" w-[95%] xl:w-[80%]"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
           <h1 className="text-customBlack text-[1.5rem] lg:text-[1.87rem]">
             کشف کردن
           </h1>
-        </motion.div>
+        </RightToLeft>
 
         <h1 className=" w-[95%] text-customBlack text-[2rem] md:text-[3.12rem] lg:text-[3.65rem] font-black block md:hidden  ">
           <div>زندگی کوتاه است و جهان گسترده است !</div>
