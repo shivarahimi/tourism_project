@@ -1,9 +1,9 @@
 // base
 import Link from "next/link";
+import { FC } from "react";
 
 // css
 import style from "./FullButton.module.css";
-import { FC } from "react";
 
 interface IFullButtonType {
   text: string;
