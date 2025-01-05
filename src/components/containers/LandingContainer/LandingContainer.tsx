@@ -16,7 +16,6 @@ import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 const LandingContainer: FC = () => {
   return (
     <section>
-      <Intro />
       <ToolsBar dataType={dataTypePageEnum.toolsBar} />
       <Discover />
       <ExploreEvent />
