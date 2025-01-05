@@ -55,7 +55,6 @@ const ExploreEvent: FC<IPropType> = () => {
                 <span className="text-xl" style={{ color: "gt-gradient-1" }}>
                   {item.icon}
                 </span>
-                {/* <FaCertificate className="text-gt-gradient-1" /> */}
                 <p className="text-[#343a40] text-base">{item.title}</p>
               </li>
             ))}
