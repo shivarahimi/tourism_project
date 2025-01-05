@@ -1,9 +1,9 @@
-// components
-import { FullImage } from "#/src/components/common/FullImage/FullImage";
-import { TitleLanding } from "#/src/components/common/TItleLanding/TitleLanding";
+// base
 import { FC } from "react";
 
-import { ToolsBar } from "../ToolsBar/ToolsBar";
+// components
+import { TitleLanding } from "#/src/components/common/TItleLanding/TitleLanding";
+
 import { SlideVideos } from "./SlideVideos/SlideVideos";
 import {
   FeatureItemData,
