@@ -12,13 +12,14 @@ import { Button, DatePicker } from "antd";
 import { ExploreEvent } from "./ExploreEvent/ExploreEvent";
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
+import { StartJourney } from "./StartJourney/StartJourney";
 
 const LandingContainer: FC = () => {
   return (
     <section>
-      <Intro />
       <ToolsBar dataType={dataTypePageEnum.toolsBar} />
       <Discover />
+      <StartJourney />
       <ExploreEvent />
       <FavoriteTour />
       <PopularVideos dataType={dataTypePageEnum.popularVideos} />
