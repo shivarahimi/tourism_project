@@ -20,7 +20,7 @@ const Headers: FC<IPropType> = () => {
   const defaultImage = "/images/landing/Headers/logo-2.png";
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   return (
-    <header className="header relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] xl:h-[120vh] bg-cover bg-center bg-no-repeat text-white py-8">
+    <header className="header relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] h-[230vh] xl:h-[120vh] bg-cover bg-center bg-no-repeat text-white py-8">
       <div className="absolute inset-0 bg-black bg-opacity-90"></div>
 
       <section className="flex items-center justify-between w-[90%] mx-auto z-50">
