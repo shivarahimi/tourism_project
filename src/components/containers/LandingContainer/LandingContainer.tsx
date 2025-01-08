@@ -7,6 +7,7 @@ import { ToolsBar } from "./ToolsBar/ToolsBar";
 import { Discover } from "./Discover/Discover";
 import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
 import { PopularVideos } from "./PopularVideos/PopularVideos";
+import ArticlesAndNewsList from "./ArticlesAndNewsList/ArticlesAndNewsList";
 
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
@@ -14,11 +15,12 @@ import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 const LandingContainer: FC = () => {
   return (
     <section>
-      <Intro />
+      {/* <Intro /> */}
       <ToolsBar dataType={dataTypePageEnum.toolsBar} />
       <Discover />
       <FavoriteTour />
       <PopularVideos dataType={dataTypePageEnum.popularVideos} />
+      <ArticlesAndNewsList />
     </section>
   );
 };

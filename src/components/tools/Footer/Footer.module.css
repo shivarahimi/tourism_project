@@ -1,0 +1,50 @@
+.imgFooter {
+  position: relative;
+}
+
+.imgFooter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4300e7 0%, #7d00fc 100%);
+  opacity: 0.6;
+  transition: width 500ms ease;
+  border-radius: 0.75rem;
+}
+
+.imgFooter:hover::before {
+  width: 100%;
+}
+
+.imgFooter:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.imgFooter::after {
+  font-size: 30px;
+  color: white; /* رنگ آیکون */
+}
+
+.iconOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 300ms ease, transform 500ms ease;
+}
+
+.expandicon {
+  font-size: 30px;
+  color: white;
+}
+
+.imgFooter:hover .iconOverlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
