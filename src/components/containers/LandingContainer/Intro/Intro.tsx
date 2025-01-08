@@ -55,7 +55,7 @@ const Intro: FC<IPropType> = () => {
         >
           <FullImage src={defaultImage1} alt="عکس" width={550} height={550} />
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <FullImage
               src={defaultImage2}
               alt="عکس"

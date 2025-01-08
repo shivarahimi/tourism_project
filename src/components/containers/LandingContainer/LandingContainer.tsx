@@ -13,14 +13,15 @@ import { ExploreEvent } from "./ExploreEvent/ExploreEvent";
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 import { StartJourney } from "./StartJourney/StartJourney";
+import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
 
 const LandingContainer: FC = () => {
   return (
     <section>
       <ToolsBar dataType={dataTypePageEnum.toolsBar} />
       <Discover />
-      <StartJourney />
-      <ExploreEvent />
+      <StartJourney dataType={exploreEventTypeEnum.startJourney} />
+      <ExploreEvent dataType={exploreEventTypeEnum.exploreEvent} />
       <FavoriteTour />
       <PopularVideos dataType={dataTypePageEnum.popularVideos} />
     </section>
