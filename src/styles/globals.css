@@ -85,6 +85,6 @@ body {
   border-bottom: none !important;
   content: "" !important;
 }
-/* .gt-booking-tab-btn li .nav-link.active{
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: #04fdee !important;
-} */
+}

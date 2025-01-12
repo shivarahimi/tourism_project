@@ -20,12 +20,12 @@ const Headers: FC<IPropType> = () => {
   const defaultImage = "/images/landing/Headers/logo-2.png";
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   return (
-    <header className="header relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] h-[230vh] xl:h-[120vh] bg-cover bg-center bg-no-repeat text-white py-8">
+    <header className="header relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] h-[300vh] xl:h-[120vh] bg-cover bg-center bg-no-repeat text-white py-8">
       <div className="absolute inset-0 bg-black bg-opacity-90"></div>
 
       <section className="flex items-center justify-between w-[90%] mx-auto z-50">
         <section className="flex items-center justify-start gap-3 z-50">
-          <div className="md:hidden cursor-pointer">
+          <div className="lg:hidden cursor-pointer">
             <HeaderResponsive />
           </div>
           <div>
@@ -33,7 +33,7 @@ const Headers: FC<IPropType> = () => {
           </div>
         </section>
 
-        <ul className="hidden md:flex md:items-center md:justify-center font-bold cursor-pointer gap-5 z-50">
+        <ul className="hidden lg:flex lg:items-center lg:justify-center font-bold cursor-pointer gap-5 z-50">
           {headerMenuList.map((item) => (
             <li key={item.key} className="relative group">
               <div className="flex items-center gap-1">
@@ -41,16 +41,16 @@ const Headers: FC<IPropType> = () => {
                 <FaAngleDown />
               </div>
               {item.subMenu?.length > 0 && (
-                <ul className="absolute right-0 mt-2 hidden w-48 bg-gt-gradient-1 rounded-md shadow-lg group-hover:block">
+                <ul className="absolute right-0 top-3 mt-2 hidden w-48 bg-gt-gradient-1 rounded-md shadow-lg group-hover:block">
                   {item.subMenu.map((subItem: any) => (
                     <li key={subItem.id} className="relative group">
                       <a
                         href={subItem.href}
-                        className="block px-4 py-2 text-white hover:bg-gray-100"
+                        className="block px-4 py-2 text-white hover:underline hover:decoration-1 underline-offset-4 hover:underline-offset-2 transition-all duration-500"
                       >
                         {subItem.title}
                       </a>
-                      {subItem.subMenu && (
+                      {/* {subItem.subMenu && (
                         <ul className="absolute left-full top-0 hidden bg-gt-gradient-1 rounded-md shadow-lg group-hover:block">
                           {subItem.subMenu.map((childItem: any) => (
                             <li
@@ -66,7 +66,7 @@ const Headers: FC<IPropType> = () => {
                             </li>
                           ))}
                         </ul>
-                      )}
+                      )} */}
                     </li>
                   ))}
                 </ul>
@@ -76,7 +76,7 @@ const Headers: FC<IPropType> = () => {
         </ul>
 
         <section className="z-50">
-          <div className="hidden md:flex bg-gt-gradient-1 rounded-[40px] py-5 px-10 gap-3 cursor-pointer">
+          <div className="hidden lg:flex bg-gt-gradient-1 rounded-[40px] py-5 px-10 gap-3 cursor-pointer">
             <div className="flex gap-1">
               <FaRegComment className="hover:rotate-360" />
               <span className="hover:underline hover:decoration-1 underline-offset-4 hover:underline-offset-2 transition-all duration-500">
