@@ -19,8 +19,8 @@ const Intro: FC<IPropType> = () => {
   const defaultImage5 = "/images/landing/Intro/ticket1.png";
 
   return (
-    <section className="relative">
-      <div className="flex flex-col-reverse items-center xl:flex-row xl:items-start md:justify-between text-white w-[90%] mt-24 mx-auto">
+    <section className="relative z-20">
+      <div className="flex flex-col-reverse items-center xl:flex-row xl:items-start md:justify-between text-white w-[90%] xl:mt-24 mx-auto">
         <div className="text-center max-w-2xl p-5">
           <div className="text-4xl md:text-7xl">کشف</div>
           <div className="flex items-center justify-center mb-3">
@@ -53,45 +53,43 @@ const Intro: FC<IPropType> = () => {
             ease: "easeInOut",
           }}
         >
-          <FullImage src={defaultImage1} alt="عکس" width={550} height={550} />
+          <FullImage src={defaultImage1} alt="مرد" width={550} height={550} />
 
-          <div className="hidden lg:block">
-            <FullImage
-              src={defaultImage2}
-              alt="عکس"
-              width={250}
-              height={250}
-              className="absolute top-0 left-0"
-            />
-            <FullImage
-              src={defaultImage4}
-              alt="عکس"
-              width={50}
-              height={50}
-              className="absolute top-28 left-[34rem]"
-            />
-            <FullImage
-              src={defaultImage5}
-              alt="عکس"
-              width={100}
-              height={100}
-              className="absolute top-48 left-[35rem]"
-            />
-            <FullImage
-              src={defaultImage3}
-              alt="عکس"
-              width={120}
-              height={120}
-              className="absolute bottom-72 left-[40rem]"
-            />
-            <FullImage
-              src={defaultImage2}
-              alt="عکس"
-              width={250}
-              height={250}
-              className="absolute bottom-60 right-0"
-            />
-          </div>
+          <FullImage
+            src={defaultImage2}
+            alt="ابر"
+            width={250}
+            height={250}
+            className="absolute top-0 left-0 -z-10 hidden lg:block"
+          />
+          <FullImage
+            src={defaultImage4}
+            alt="عینک"
+            width={50}
+            height={50}
+            className="absolute top-28 left-[34rem] hidden xl:block"
+          />
+          <FullImage
+            src={defaultImage5}
+            alt="عکس"
+            width={100}
+            height={100}
+            className="absolute top-48 left-[35rem] hidden xl:block"
+          />
+          <FullImage
+            src={defaultImage3}
+            alt="عکس"
+            width={120}
+            height={120}
+            className="absolute bottom-72 left-[40rem] hidden xl:block"
+          />
+          <FullImage
+            src={defaultImage2}
+            alt="ابر"
+            width={250}
+            height={250}
+            className="absolute bottom-60 right-0 hidden xl:block"
+          />
         </motion.div>
       </div>
       <TabSearchBox />

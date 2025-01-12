@@ -19,8 +19,8 @@ const ExploreJourney: FC<IPropType> = ({ data, dataType }) => {
       : "text-white";
   const exploreEventWidth =
     dataType === exploreEventTypeEnum.exploreEvent
-      ? ""
-      : "px-6 lg:w-[54%] lg:px-32";
+      ? "lg:px-2"
+      : "px-6 lg:w-[54%] xl:px-32";
   const exploreEventsubData =
     dataType === exploreEventTypeEnum.exploreEvent
       ? "lg:flex-row lg:flex-wrap lg:items-center"
@@ -34,12 +34,12 @@ const ExploreJourney: FC<IPropType> = ({ data, dataType }) => {
     <section>
       <div className={`flex flex-col justify-center z-20 ${exploreEventWidth}`}>
         <div className={`mb-5 ${exploreEventText}`}>
-          <div className={`text-[42px] ${exploreEventStar}`}>
+          <div className={`text-[28px] xl:text-[42px] ${exploreEventStar}`}>
             <FullImage src={defaultImage1} alt="استار" width={28} height={28} />
             {data.title}
           </div>
-          <h1 className="font-black text-[53px]">{data.info}</h1>
-          <p className="text-lg text-start">{data.desc}</p>
+          <h1 className="font-black text-[35px] xl:text-[53px]">{data.info}</h1>
+          <p className="text-[20px] xl:text-lg text-start">{data.desc}</p>
         </div>
         <div>
           <ul
@@ -47,7 +47,28 @@ const ExploreJourney: FC<IPropType> = ({ data, dataType }) => {
           >
             {data.subData.map((item) => (
               <li key={item.id} className="flex items-center lg:w-[50%] gap-2">
-                <span className="text-xl" style={{ color: "gt-gradient-1" }}>
+                <span
+                  className="text-xl"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #4300e7 0%, #7d00fc 100%)",
+                    WebkitMaskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>')`,
+                    WebkitMaskRepeat: "no-repeat",
+                    WebkitMaskSize: "contain",
+                    display: "flex", // برای هم‌راستا شدن آیکون داخل دایو
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "transparent",
+                  }}
+                  // style={{
+                  //   color: "red",
+                  //   WebkitBackgroundClip: "text",
+                  //   WebkitTextFillColor: "transparent",
+                  // }}
+                  // style={{
+                  //   color: "red",
+                  // }}
+                >
                   {item.icon}
                 </span>
                 <p className={`${exploreEventText} text-base`}>{item.title}</p>

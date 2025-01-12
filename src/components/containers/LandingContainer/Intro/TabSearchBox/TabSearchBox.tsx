@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
 import { BsFillCalendarFill, BsSearch } from "react-icons/bs";
 import { FaMapMarkedAlt, FaPlaneDeparture } from "react-icons/fa";
+import style from "../TabSearchBox/TabSearchBox.module.css";
 
 interface IPropType {}
 
@@ -63,7 +64,7 @@ const TabSearchBox: FC<IPropType> = () => {
                     exit="exit"
                     variants={variants}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="flex flex-col lg:flex-row items-center justify-center lg:gap-40 bg-white text-black p-10 md:p-3 rounded-2xl lg:rounded-[100px]"
+                    className="flex flex-col lg:flex-row items-center justify-center lg:gap-32 bg-white text-black p-10 md:py-5 rounded-2xl lg:rounded-[100px]"
                   >
                     {tabContent.map((item, index) => (
                       <div key={index} className="mb-4 w-[100px]">
@@ -71,7 +72,7 @@ const TabSearchBox: FC<IPropType> = () => {
                         <span>{item.description}</span>
                       </div>
                     ))}
-                    <div className="flex items-center justify-center gap-2 rounded-[40px] text-white text-lg font-bold py-5 px-9 bg-gt-gradient-1 mt-4">
+                    <div className="flex items-center justify-center gap-2 rounded-[40px] text-white text-lg font-bold py-5 px-9 bg-gt-gradient-1 mt-4 lg:mt-0">
                       <BsSearch />
                       <button>
                         <p>جستجو</p>
