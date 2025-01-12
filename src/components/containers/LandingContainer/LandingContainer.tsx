@@ -11,6 +11,7 @@ import ArticlesAndNewsList from "./ArticlesAndNewsList/ArticlesAndNewsList";
 
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
+import { About } from "./About/About";
 
 const LandingContainer: FC = () => {
   return (
@@ -21,6 +22,7 @@ const LandingContainer: FC = () => {
       <FavoriteTour />
       <PopularVideos dataType={dataTypePageEnum.popularVideos} />
       <ArticlesAndNewsList />
+      <About />
     </section>
   );
 };
