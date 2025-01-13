@@ -9,6 +9,7 @@ import { FullImage } from "#/src/components/common/FullImage/FullImage";
 // anim
 import { FadeInUp } from "#/src/components/common/Animation/FadeInUp/FadeInUp";
 
+// data
 import { IFavoriteTourListType } from "#/src/core/data/Landing/FavoriteTour.data";
 
 //css

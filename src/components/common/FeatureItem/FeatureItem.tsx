@@ -16,7 +16,7 @@ import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 
 interface FeatureItemProps {
   data: IFeatureItemDataType[]; // دریافت داده‌ها
-  dataType?: "toolsBar" | "popularVideos";
+  dataType?: "toolsBar" | "popularVideos" | "contact";
 }
 
 const FeatureItem: FC<FeatureItemProps> = ({ data, dataType }) => {

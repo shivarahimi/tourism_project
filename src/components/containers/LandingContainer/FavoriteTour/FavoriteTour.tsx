@@ -16,7 +16,7 @@ const FavoriteTour = () => {
 
   return (
     <section
-      className=" h-full  py-32 px-8 "
+      className=" h-full  pt-16 pb-16 px-8"
       style={{
         backgroundImage:
           "url('/images/landing/FavoriteTour/bottom-shape2.png')",
