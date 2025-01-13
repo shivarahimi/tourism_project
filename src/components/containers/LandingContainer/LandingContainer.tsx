@@ -10,15 +10,20 @@ import { PopularVideos } from "./PopularVideos/PopularVideos";
 import { ArticlesAndNewsList } from "./ArticlesAndNewsList/ArticlesAndNewsList";
 import { Contact } from "./Contact/Contact";
 
+import { Button, DatePicker } from "antd";
+import { ExploreEvent } from "./ExploreEvent/ExploreEvent";
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
+import { StartJourney } from "./StartJourney/StartJourney";
+import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
 
 const LandingContainer: FC = () => {
   return (
     <section>
-      <Intro />
       <ToolsBar dataType={dataTypePageEnum.toolsBar} />
       <Discover />
+      <StartJourney dataType={exploreEventTypeEnum.startJourney} />
+      <ExploreEvent dataType={exploreEventTypeEnum.exploreEvent} />
       <FavoriteTour />
       <PopularVideos dataType={dataTypePageEnum.popularVideos} />
       <ArticlesAndNewsList />
