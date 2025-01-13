@@ -7,11 +7,11 @@ import { ToolsBar } from "./ToolsBar/ToolsBar";
 import { Discover } from "./Discover/Discover";
 import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
 import { PopularVideos } from "./PopularVideos/PopularVideos";
-import ArticlesAndNewsList from "./ArticlesAndNewsList/ArticlesAndNewsList";
+import { ArticlesAndNewsList } from "./ArticlesAndNewsList/ArticlesAndNewsList";
+import { Contact } from "./Contact/Contact";
 
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
-import { About } from "./About/About";
 
 const LandingContainer: FC = () => {
   return (
@@ -22,7 +22,7 @@ const LandingContainer: FC = () => {
       <FavoriteTour />
       <PopularVideos dataType={dataTypePageEnum.popularVideos} />
       <ArticlesAndNewsList />
-      <About />
+      <Contact />
     </section>
   );
 };

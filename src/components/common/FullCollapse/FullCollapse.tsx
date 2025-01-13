@@ -24,6 +24,7 @@ interface IFullCollapsePropType {
   ghost?: boolean;
   size?: "small" | "middle" | "large";
   onChange?: (activeKey: string[]) => void;
+  className?: string;
 }
 
 const FullCollapse: FC<IFullCollapsePropType> = ({
@@ -37,6 +38,7 @@ const FullCollapse: FC<IFullCollapsePropType> = ({
   ghost = true,
   size,
   onChange,
+  className,
 }) => {
   return (
     <Collapse
@@ -71,6 +73,7 @@ const FullCollapse: FC<IFullCollapsePropType> = ({
       ghost={ghost} //حاشه حذف میشه ,بوردر حذف میشه
       size={size || "large"}
       onChange={onChange}
+      className={className}
     />
   );
 };

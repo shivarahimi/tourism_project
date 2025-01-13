@@ -18,4 +18,4 @@ const ArticlesAndNewsList = () => {
   );
 };
 
-export default ArticlesAndNewsList;
+export { ArticlesAndNewsList };
