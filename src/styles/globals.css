@@ -64,12 +64,6 @@ body {
   padding: 10px 50px 10px;
   gap: 20px;
 }
-.ant-tabs-nav .ant-tabs-nav-wrap {
-  position: absolute;
-  z-index: 10;
-  right: 60px;
-  top: 32px;
-}
 .ant-tabs-nav-wrap .ant-tabs-nav-list .ant-tabs-ink-bar {
   width: 0px !important;
 }
@@ -87,4 +81,15 @@ body {
 }
 .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: #04fdee !important;
+}
+.ant-tabs-nav .ant-tabs-nav-wrap {
+  position: absolute;
+  z-index: 10;
+  right: 60px;
+  top: 32px;
+}
+@media screen and (max-width: 576px) {
+  .ant-tabs-nav .ant-tabs-nav-wrap {
+    right: 15px;
+  }
 }
