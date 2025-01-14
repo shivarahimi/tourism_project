@@ -10,7 +10,7 @@ interface IPropType {
 const CMSLayout: FC<IPropType> = ({ children }) => {
   return (
     <>
-      {/* <Headers /> */}
+      <Headers />
       <section>{children}</section>
       <Footer />
     </>
