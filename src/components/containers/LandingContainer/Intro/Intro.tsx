@@ -8,7 +8,6 @@ import { Mover } from "#/src/components/common/Animation/Mover/Mover";
 import { RightToLeftImg } from "#/src/components/common/Animation/RightToLeftImg/RightToLeftImg";
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { TabSearchBox } from "./TabSearchBox/TabSearchBox";
-import { motion } from "framer-motion";
 
 interface IPropType {}
 
@@ -20,37 +19,35 @@ const Intro: FC<IPropType> = () => {
   const defaultImage5 = "/images/landing/Intro/ticket1.png";
 
   return (
-    <section className="relative z-20">
-      <motion.div
-        className="container flex flex-col-reverse items-center xl:flex-row xl:items-start md:justify-between text-white w-[90%] xl:mt-24 mx-auto"
-        initial={{ x: 0 }}
-        whileHover={{ x: 10 }} // حرکت به راست هنگام هاور
-        transition={{ duration: 0.5 }}
-      ></motion.div>
+    <section className="xl:relative z-20">
       <div className="flex flex-col-reverse items-center xl:flex-row xl:items-start md:justify-between text-white w-[90%] xl:mt-24 mx-auto">
-        <div className="text-center max-w-2xl p-5">
-          <div className="text-4xl md:text-7xl">کشف</div>
-          <div className="flex items-center justify-center mb-3">
-            <h1 className="text-4xl md:text-7xl font-black">
-              <Typewriter
-                words={["ماجرای", "مقصد", "تور"]}
-                loop={true} // برای نمایش مداوم، این مقدار را true قرار دهید
-                cursor
-                cursorStyle="|"
-                typeSpeed={130}
-                deleteSpeed={80}
-                delaySpeed={1300} // فاصله زمانی بین متون
-              />
-            </h1>
-            <h1 className="text-4xl md:text-7xl font-black">بعدی</h1>
-          </div>
+        <div className="flex flex-col items-center justify-start z-20">
+          <div className="text-center max-w-2xl p-5">
+            <div className="text-4xl md:text-7xl">کشف</div>
+            <div className="flex items-center justify-center mb-3">
+              <h1 className="text-4xl md:text-7xl font-black">
+                <Typewriter
+                  words={["ماجرای", "مقصد", "تور"]}
+                  loop={true} // برای نمایش مداوم، این مقدار را true قرار دهید
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={130}
+                  deleteSpeed={80}
+                  delaySpeed={1300} // فاصله زمانی بین متون
+                />
+              </h1>
+              <h1 className="text-4xl md:text-7xl font-black">بعدی</h1>
+            </div>
 
-          <p className="text-lg md:text-xl">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است
-          </p>
+            <p className="text-lg md:text-xl">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
+              ستون و سطرآنچنان که لازم است
+            </p>
+          </div>
+          <TabSearchBox />
         </div>
+
         <Mover duration={3} animName="easeInOut">
           <FullImage src={defaultImage1} alt="مرد" width={550} height={550} />
         </Mover>
@@ -91,7 +88,6 @@ const Intro: FC<IPropType> = () => {
           <FullImage src={defaultImage2} alt="ابر" width={250} height={250} />
         </RightToLeftImg>
       </div>
-      <TabSearchBox />
     </section>
   );
 };
