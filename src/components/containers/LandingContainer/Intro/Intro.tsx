@@ -21,12 +21,6 @@ const Intro: FC<IPropType> = () => {
 
   return (
     <section className="relative z-20">
-      <motion.div
-        className="container flex flex-col-reverse items-center xl:flex-row xl:items-start md:justify-between text-white w-[90%] xl:mt-24 mx-auto"
-        initial={{ x: 0 }}
-        whileHover={{ x: 10 }} // حرکت به راست هنگام هاور
-        transition={{ duration: 0.5 }}
-      ></motion.div>
       <div className="flex flex-col-reverse items-center xl:flex-row xl:items-start md:justify-between text-white w-[90%] xl:mt-24 mx-auto">
         <div className="text-center max-w-2xl p-5">
           <div className="text-4xl md:text-7xl">کشف</div>
