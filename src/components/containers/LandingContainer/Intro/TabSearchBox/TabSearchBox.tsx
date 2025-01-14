@@ -64,7 +64,7 @@ const TabSearchBox: FC<IPropType> = () => {
                     exit="exit"
                     variants={variants}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="flex flex-col lg:flex-row items-center justify-center lg:gap-32 bg-white text-black p-10 md:py-5 rounded-2xl lg:rounded-[100px]"
+                    className="flex flex-col lg:flex-row items-center justify-center lg:gap-32 bg-white text-black p-10 md:py-5 rounded-2xl lg:rounded-[100px] w-[320px] sm:w-[500px] md:w-[600px] lg:w-[940px]"
                   >
                     {tabContent.map((item, index) => (
                       <div key={index} className="mb-4 w-[100px]">
