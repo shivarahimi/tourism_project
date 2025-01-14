@@ -7,6 +7,8 @@ import { ToolsBar } from "./ToolsBar/ToolsBar";
 import { Discover } from "./Discover/Discover";
 import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
 import { PopularVideos } from "./PopularVideos/PopularVideos";
+import { ArticlesAndNewsList } from "./ArticlesAndNewsList/ArticlesAndNewsList";
+import { Contact } from "./Contact/Contact";
 
 import { Button, DatePicker } from "antd";
 import { ExploreEvent } from "./ExploreEvent/ExploreEvent";
@@ -24,6 +26,8 @@ const LandingContainer: FC = () => {
       <ExploreEvent dataType={exploreEventTypeEnum.exploreEvent} />
       <FavoriteTour />
       <PopularVideos dataType={dataTypePageEnum.popularVideos} />
+      <ArticlesAndNewsList />
+      <Contact />
     </section>
   );
 };

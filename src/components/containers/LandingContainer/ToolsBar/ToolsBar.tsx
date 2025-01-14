@@ -6,7 +6,7 @@ import FeatureItem from "#/src/components/common/FeatureItem/FeatureItem";
 import { FeatureItemData } from "#/src/core/data/Landing/Toolbar.data";
 
 interface ISharePropType {
-  dataType: "toolsBar" | "popularVideos"; // برای مشخص کردن نوع داده
+  dataType: "toolsBar" | "popularVideos" | "contact"; // برای مشخص کردن نوع داده
 }
 
 const ToolsBar: FC<ISharePropType> = ({ dataType }) => {
