@@ -14,14 +14,3 @@ export const convertToPersianNumbers = (input: string) => {
 
   return input.replace(/[0-9]/g, (match) => englishToPersian[match]);
 };
-
-// convertToNumber
-
-export function convertToNumber(inputValue: string): { pureValue: string } {
-  const numericString = inputValue?.toString()?.replace(/[^\d]/g, "");
-  console.log(numericString);
-
-  return {
-    pureValue: numericString,
-  };
-}

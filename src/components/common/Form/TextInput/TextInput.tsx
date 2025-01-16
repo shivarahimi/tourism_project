@@ -1,14 +1,18 @@
+// base
 import React, { FC } from "react";
+// lib
 import { Input } from "antd";
 import { useField, useFormikContext } from "formik";
 
-import { textInputType } from "#/src/core/enums/textInput-type.enum";
-// import "./TextInput.css";
+// components
+import { FullErrorMessage } from "../FullErrorMessage/FullErrorMessage";
 
-import {
-  convertToNumber,
-  convertToPersianNumbers,
-} from "#/src/core/hooks/PersianToEnglish";
+// enum
+import { textInputType } from "#/src/core/enums/textInput-type.enum";
+// hooks
+import { convertToPersianNumbers } from "#/src/core/hooks/PersianToEnglish";
+
+import "./TextInput.css";
 
 // نوع‌های ورودی
 interface ITextType {
@@ -25,6 +29,7 @@ interface ITextInputPropType {
   value?: string;
   size?: "middle" | "small" | "large";
   placeholder: string;
+  autoFocus?: boolean;
   variant?: "borderless" | "filled" | "outlined";
   isNumber?: boolean;
   singleSpace?: boolean;
@@ -50,8 +55,9 @@ const TextInput: FC<ICombinedPageType> = ({
   value,
   size = "large",
   placeholder,
+  autoFocus,
   variant = "borderless",
-  isNumber,
+
   singleSpace = true,
   allowClear,
   classNames,
@@ -69,58 +75,59 @@ const TextInput: FC<ICombinedPageType> = ({
   const { setFieldValue } = useFormikContext();
 
   return (
-    <Input
-      name={name}
-      value={
-        isNumber
-          ? convertToNumber(value ? value : meta.value).pureValue
-          : value
-          ? value
-          : meta.value
-          ? meta.value
-          : undefined
-      }
-      type={textInputType.text}
-      size={size}
-      placeholder={placeholder}
-      variant={variant}
-      allowClear={allowClear}
-      className={`!border-b-2 !border-solid !border-white h-[40px] text-base mb-[33px] bg-transparent
-        font-semibold text-white w-full !border-t-0 !border-l-0 !border-r-0 rounded-none
-        ${classNames}`}
-      style={
-        style || {
-          color: "white",
-          backgroundColor: "red",
+    <>
+      <Input
+        name={name}
+        value={value ?? meta.value ?? undefined}
+        autoComplete="off"
+        type={textInputType.text}
+        size={size}
+        placeholder={placeholder}
+        autoFocus={autoFocus}
+        variant={variant}
+        allowClear={allowClear}
+        className={`${classNames} 
+          ${
+            !meta.error &&
+            meta.touched &&
+            !disabled &&
+            "border border-solid border-green-500 "
+          } ${
+          meta.error && meta.touched && "border border-solid border-red-500 "
+        } `}
+        style={
+          style || {
+            color: "white",
+          }
         }
-      }
-      showCount={showCount}
-      disabled={disabled}
-      maxLength={maxLength}
-      onChange={(
-        param: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-      ) => {
-        let inputValue = param.target.value;
+        showCount={showCount}
+        disabled={disabled}
+        maxLength={maxLength}
+        onChange={(
+          param: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        ) => {
+          let inputValue = param.target.value;
 
-        inputValue = convertToPersianNumbers(inputValue);
+          inputValue = convertToPersianNumbers(inputValue);
 
-        // inputValue = inputValue.replace(/[^0-9]/g, "");
+          if (singleSpace) {
+            inputValue = String(inputValue).replace(/\s+/g, " ");
+          }
 
-        // if (inputValue.length > 11) {
-        //   inputValue = inputValue.slice(0, 11);
-        // }
+          setFieldValue(name, inputValue);
 
-        setFieldValue(name, inputValue);
+          if (onChange) {
+            onChange(inputValue);
+          }
+        }}
+        addonAfter={addonAfter}
+        addonBefore={addonBefore}
+        prefix={prefix}
+        suffix={suffix}
+      />
 
-        if (onChange) {
-          onChange(inputValue);
-        }
-      }}
-      addonAfter={addonAfter}
-      addonBefore={addonBefore}
-      prefix={prefix}
-      suffix={suffix}
-    />
+      <FullErrorMessage name={name} />
+    </>
   );
 };
 
