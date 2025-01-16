@@ -30,19 +30,21 @@ const Contact = () => {
   };
 
   return (
-    <motion.section
+    <section
       className="mt-[9rem] pb-[8rem] relative
               before:absolute before:left-0 before:bottom-0 before:w-full before:h-[217px]
               before:bg-[#1a1b1d] before:-z-10 before:content-['']"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={{
-        hidden: { opacity: 0, y: 100 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-      }}
     >
-      <div className="grid lg:grid-cols-2 max-w-[1280px] mx-4 sm:mx-12 lg:mx-4 xl:mx-auto">
+      <motion.div
+        className="grid lg:grid-cols-2 max-w-[1280px] mx-4 sm:mx-12 lg:mx-4 xl:mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={{
+          hidden: { opacity: 0, y: 100 },
+          visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+        }}
+      >
         <div className="bg-white shadow-[0px_11px_109px_0px_rgba(0,0,0,0.14)] rounded-r-xl ">
           <FadeInUp duration={1.2}>
             <FullCollapse items={items} className=" mt-8 md::mt-16" />
@@ -64,8 +66,8 @@ const Contact = () => {
             )}
           </Formik>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 
