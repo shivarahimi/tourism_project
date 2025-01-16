@@ -1,4 +1,5 @@
 // base
+import { RightToLeft } from "#/src/components/common/Animation/RightToLeft/RightToLeft";
 import { ExploreJourney } from "#/src/components/common/ExploreJourney/ExploreJourney";
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { ExploreEventData } from "#/src/core/data/Landing/ExploreEvent.data";
@@ -26,7 +27,6 @@ const StartJourney: FC<ISharePropType> = ({ dataType }) => {
           className="hidden xl:block absolute top-0 left-0 h-full"
         />
       </div>
-
       <FullImage
         src={defaultImage2}
         alt="چمدان"
@@ -34,6 +34,7 @@ const StartJourney: FC<ISharePropType> = ({ dataType }) => {
         height={550}
         className="hidden lg:block !-z-10 xl:!z-20 absolute top-20 left-[17rem]"
       />
+
       <FullImage
         src={defaultImage3}
         alt="لاین"
@@ -41,6 +42,7 @@ const StartJourney: FC<ISharePropType> = ({ dataType }) => {
         height={600}
         className="hidden lg:block lg:-right-40 lg:-bottom-20 absolute xl:-bottom-20 xl:right-60 -z-20"
       />
+
       <ExploreJourney data={data} />
     </section>
   );

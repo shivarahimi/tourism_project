@@ -4,6 +4,7 @@ import { FC } from "react";
 import { FullButton } from "../Form/FullButton/FullButton";
 import { FullImage } from "../FullImage/FullImage";
 import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
+import { RightToLeft } from "../Animation/RightToLeft/RightToLeft";
 
 interface IPropType {
   data: ExploreEventDataType;
@@ -29,17 +30,25 @@ const ExploreJourney: FC<IPropType> = ({ data, dataType }) => {
     dataType === exploreEventTypeEnum.exploreEvent
       ? ""
       : "flex items-center gap-2";
-  // const isExploreEvent = dataType === exploreEventTypeEnum.exploreEvent;
   return (
     <section>
       <div className={`flex flex-col justify-center z-20 ${exploreEventWidth}`}>
         <div className={`mb-5 ${exploreEventText}`}>
-          <div className={`text-[28px] xl:text-[42px] ${exploreEventStar}`}>
-            <FullImage src={defaultImage1} alt="استار" width={28} height={28} />
-            {data.title}
-          </div>
+          <RightToLeft duration={0.5} animName="easeOut">
+            <div className={`text-[28px] xl:text-[42px] ${exploreEventStar}`}>
+              <FullImage
+                src={defaultImage1}
+                alt="استار"
+                width={28}
+                height={28}
+              />
+              {data.title}
+            </div>
+          </RightToLeft>
           <h1 className="font-black text-[35px] xl:text-[53px]">{data.info}</h1>
-          <p className="text-[20px] xl:text-lg text-start">{data.desc}</p>
+          <RightToLeft duration={0.5} animName="easeOut">
+            <p className="text-[20px] xl:text-lg text-start">{data.desc}</p>
+          </RightToLeft>
         </div>
         <div>
           <ul

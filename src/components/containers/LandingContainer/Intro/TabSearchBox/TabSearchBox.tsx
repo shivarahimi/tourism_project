@@ -40,7 +40,7 @@ const TabSearchBox: FC<IPropType> = () => {
     exit: { opacity: 0, x: -50 },
   };
   return (
-    <section className="flex flex-col-reverse lg:flex-row items-center md:justify-between absolute lg:bottom-34 lg:right-30 xl:bottom-24 xl:right-20 gap-12 p-5 text-black font-extrabold">
+    <section className="flex flex-col-reverse lg:flex-row items-center md:justify-between xl:absolute xl:bottom-24 xl:right-20 gap-12 p-5 text-black font-extrabold">
       <Tabs
         activeKey={activeTab}
         onChange={(key) => setActiveTab(key)}
@@ -64,7 +64,7 @@ const TabSearchBox: FC<IPropType> = () => {
                     exit="exit"
                     variants={variants}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="flex flex-col lg:flex-row items-center justify-center lg:gap-32 bg-white text-black p-10 md:py-5 rounded-2xl lg:rounded-[100px]"
+                    className="flex flex-col lg:flex-row items-start lg:items-center lg:justify-center lg:gap-32 bg-white text-black p-10 md:py-5 rounded-2xl lg:rounded-[100px] w-[320px] sm:w-[500px] md:w-[600px] lg:w-[940px]"
                   >
                     {tabContent.map((item, index) => (
                       <div key={index} className="mb-4 w-[100px]">

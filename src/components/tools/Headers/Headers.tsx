@@ -8,19 +8,15 @@ import { FaAngleDown, FaRegComment } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { FullImage } from "../../common/FullImage/FullImage";
 import { Intro } from "../../containers/LandingContainer/Intro/Intro";
+import Link from "next/link";
 
 interface IPropType {}
 
 const Headers: FC<IPropType> = () => {
-  const [openMenu, setOpenMenu] = useState(null);
-
-  const toggleMenu = (menuKey: any) => {
-    setOpenMenu(openMenu === menuKey ? null : menuKey);
-  };
   const defaultImage = "/images/landing/Headers/logo-2.png";
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   return (
-    <header className="header relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] h-[300vh] xl:h-[120vh] bg-cover bg-center bg-no-repeat text-white py-8">
+    <header className="header relative bg-[url('/images/landing/Headers/photo_6017237486956299690_y.jpg')] h-auto bg-cover bg-center bg-no-repeat text-white py-8">
       <div className="absolute inset-0 bg-black bg-opacity-90"></div>
 
       <section className="flex items-center justify-between w-[90%] mx-auto z-50">
@@ -36,7 +32,7 @@ const Headers: FC<IPropType> = () => {
         <ul className="hidden lg:flex lg:items-center lg:justify-center font-bold cursor-pointer gap-5 z-50">
           {headerMenuList.map((item) => (
             <li key={item.key} className="relative group">
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 hover:text-purple-300">
                 {item.title}
                 <FaAngleDown />
               </div>
@@ -44,12 +40,12 @@ const Headers: FC<IPropType> = () => {
                 <ul className="absolute right-0 top-3 mt-2 hidden w-48 bg-gt-gradient-1 rounded-md shadow-lg group-hover:block">
                   {item.subMenu.map((subItem: any) => (
                     <li key={subItem.id} className="relative group">
-                      <a
+                      <Link
                         href={subItem.href}
                         className="block px-4 py-2 text-white hover:underline hover:decoration-1 underline-offset-4 hover:underline-offset-2 transition-all duration-500"
                       >
                         {subItem.title}
-                      </a>
+                      </Link>
                       {/* {subItem.subMenu && (
                         <ul className="absolute left-full top-0 hidden bg-gt-gradient-1 rounded-md shadow-lg group-hover:block">
                           {subItem.subMenu.map((childItem: any) => (
