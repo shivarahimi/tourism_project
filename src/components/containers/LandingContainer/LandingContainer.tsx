@@ -9,12 +9,10 @@ import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
 import { PopularVideos } from "./PopularVideos/PopularVideos";
 import { ArticlesAndNewsList } from "./ArticlesAndNewsList/ArticlesAndNewsList";
 import { Contact } from "./Contact/Contact";
-
-import { Button, DatePicker } from "antd";
+import { StartJourney } from "./StartJourney/StartJourney";
 import { ExploreEvent } from "./ExploreEvent/ExploreEvent";
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
-import { StartJourney } from "./StartJourney/StartJourney";
 import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
 
 const LandingContainer: FC = () => {

@@ -45,7 +45,7 @@ export const items = [
   {
     key: "2",
     label: (
-      <span className="text-[#182022] font-extrabold text-[1.3rem]">
+      <span className="text-[#182022] font-extrabold text-base sm:!text-xl">
         سود اضافی از طریق Lnvest شرکت تایید شده
       </span>
     ),

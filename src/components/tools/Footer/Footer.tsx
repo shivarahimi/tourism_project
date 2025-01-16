@@ -26,7 +26,7 @@ import style from "./Footer.module.css";
 
 const Footer: FC = () => {
   return (
-    <section className="bg-[#1A1B1D] pt-[4.6rem] text-[#f9f9f9] px-4 lg:px-12 ">
+    <section className="bg-[#1A1B1D]  text-[#f9f9f9] px-4 lg:px-12 ">
       <div className="grid md:grid-cols-12 xl:grid-cols-10 gap-4">
         <div className=" md:col-span-6  xl:col-span-4 ">
           <div>
@@ -143,7 +143,7 @@ const Footer: FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center my-8 pb-4">
+      <div className="flex justify-center items-center mt-8 pb-4">
         <p className="sm:text-lg">© کپی رایت 2024. کلیه حقوق محفوظ است.</p>
       </div>
     </section>

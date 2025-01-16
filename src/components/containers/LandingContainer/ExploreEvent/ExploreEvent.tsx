@@ -1,6 +1,6 @@
 // base
 import { ExploreJourney } from "#/src/components/common/ExploreJourney/ExploreJourney";
-import { FullButton } from "#/src/components/common/FullButton/FullButton";
+import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { ExploreEventData } from "#/src/core/data/Landing/ExploreEvent.data";
 import { FC } from "react";
