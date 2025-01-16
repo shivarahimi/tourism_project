@@ -143,7 +143,7 @@ const Footer: FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center my-8 pb-4">
+      <div className="flex justify-center items-center mt-8 pb-4">
         <p className="sm:text-lg">© کپی رایت 2024. کلیه حقوق محفوظ است.</p>
       </div>
     </section>
