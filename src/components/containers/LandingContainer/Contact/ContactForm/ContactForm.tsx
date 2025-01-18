@@ -32,14 +32,14 @@ const ContactForm = () => {
               name="userName"
               placeholder="نام شما"
               allowClear
-              classNames="border-b-white mb-[33px]  w-[100%]"
+              classNames="border-b-white mb-[33px] w-[100%]"
             />
 
             <TextInput
               name="email"
               placeholder="ایمیل شما"
               allowClear
-              classNames="border-white mb-[33px]  w-[100%]"
+              classNames="border-white mb-[33px] w-[100%]"
             />
           </div>
 
@@ -49,13 +49,13 @@ const ContactForm = () => {
               placeholder="موبایل"
               allowClear
               maxLength={11}
-              classNames="border-b-white mb-[33px]  w-[100%]"
+              classNames="border-b-white mb-[33px] w-[100%]"
             />
             <TextInput
               name="message"
               placeholder="پیام شما"
               allowClear
-              classNames="border-b-white  mb-[33px]  w-[100%]"
+              classNames="border-b-white  mb-[33px] w-[100%]"
             />
           </div>
         </div>
