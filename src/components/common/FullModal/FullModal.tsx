@@ -87,7 +87,7 @@ const FullModal: FC<IFullModalPropType> = ({
           ((node) => (
             <div
               style={{
-                animation: "fadeInUp 0.5s ease-out;",
+                animation: "fadeInUp 0.5s ease-out",
               }}
             >
               {node}
