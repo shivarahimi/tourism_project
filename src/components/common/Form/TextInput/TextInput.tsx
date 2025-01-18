@@ -11,9 +11,10 @@ import { FullErrorMessage } from "../FullErrorMessage/FullErrorMessage";
 import { textInputType } from "#/src/core/enums/textInput-type.enum";
 // hooks
 import { convertToPersianNumbers } from "#/src/core/hooks/PersianToEnglish";
+// icon
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import "./TextInput.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 // نوع‌های ورودی
 interface ITextType {
@@ -24,7 +25,6 @@ interface IPasswordType {
   type?: textInputType.password;
 }
 
-// ویژگی‌های کامپوننت
 interface ITextInputPropType {
   name: string;
   value?: string;
@@ -68,10 +68,12 @@ const TextInput: FC<ICombinedPageType> = ({
   disabled = false,
   maxLength = 200,
   onChange,
-  addonAfter,
-  addonBefore,
-  prefix,
-  suffix,
+
+  // ایکن ها
+  addonAfter, //آیکن چپ و دورتر
+  addonBefore, // آیکن راست و دورتر
+  prefix, // آیکن راست و چسبیده
+  suffix, //آِیکن چپ و جسبیده
 }) => {
   const [field, meta] = useField({ name });
   const { setFieldValue } = useFormikContext();
@@ -105,18 +107,19 @@ const TextInput: FC<ICombinedPageType> = ({
     variant,
     allowClear,
     className: `${classNames} 
-      ${
-        !meta.error &&
-        meta.touched &&
-        !disabled &&
-        "border border-solid border-green-500"
-      } 
-      ${meta.error && meta.touched && "border border-solid border-red-500"}`,
+    ${
+      !meta.error &&
+      meta.touched &&
+      !disabled &&
+      "border border-solid border-green-500"
+    } 
+    ${meta.error && meta.touched && "border border-solid border-red-500"}`,
     style: style || { color: "white" },
     showCount,
     disabled,
     maxLength,
     onChange: handleChange,
+
     addonAfter,
     addonBefore,
     prefix,

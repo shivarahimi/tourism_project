@@ -9,6 +9,7 @@ import { TitleLanding } from "#/src/components/common/TItleLanding/TitleLanding"
 import { TextInput } from "@/components/common/Form/TextInput/TextInput";
 // enum
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
+import { FaUser } from "react-icons/fa";
 
 const ContactForm = () => {
   return (
@@ -25,12 +26,21 @@ const ContactForm = () => {
         </div>
 
         {/*input  */}
-
         <div className="grid sm:grid-cols-2 sm:gap-8">
           <div>
-            <TextInput name="userName" placeholder="نام شما" allowClear />
+            <TextInput
+              name="userName"
+              placeholder="نام شما"
+              allowClear
+              classNames="border-b-white mb-[33px] w-[100%]"
+            />
 
-            <TextInput name="email" placeholder="ایمیل شما" allowClear />
+            <TextInput
+              name="email"
+              placeholder="ایمیل شما"
+              allowClear
+              classNames="border-white mb-[33px] w-[100%]"
+            />
           </div>
 
           <div className="">
@@ -39,8 +49,14 @@ const ContactForm = () => {
               placeholder="موبایل"
               allowClear
               maxLength={11}
+              classNames="border-b-white mb-[33px] w-[100%]"
             />
-            <TextInput name="message" placeholder="پیام شما" allowClear />
+            <TextInput
+              name="message"
+              placeholder="پیام شما"
+              allowClear
+              classNames="border-b-white  mb-[33px] w-[100%]"
+            />
           </div>
         </div>
 
@@ -50,6 +66,7 @@ const ContactForm = () => {
               name="textQuot"
               placeholder=" چه طور میتونم کمکت کنم ؟"
               allowClear
+              classNames="border-b-white mb-[33px] w-[100%]"
             />
           </div>
         </div>

@@ -2,15 +2,13 @@
   > input.ant-input,
 :where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
   > textarea.ant-input {
-  border-radius: none;
-  border-bottom: 2px solid white;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  margin-bottom: 33px;
-  height: 33px;
+  border-radius: none !important;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
   background: linear-gradient(90deg, #4300e7 0%, #7d00fc 100%) !important;
-  width: 100%;
 }
 
 :where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
@@ -25,4 +23,10 @@
   position: absolute !important;
   left: 22px !important;
   top: 20px !important;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-input-borderless {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
