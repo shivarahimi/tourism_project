@@ -13,6 +13,7 @@ import { textInputType } from "#/src/core/enums/textInput-type.enum";
 import { convertToPersianNumbers } from "#/src/core/hooks/PersianToEnglish";
 
 import "./TextInput.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 // نوع‌های ورودی
 interface ITextType {
@@ -31,7 +32,7 @@ interface ITextInputPropType {
   placeholder: string;
   autoFocus?: boolean;
   variant?: "borderless" | "filled" | "outlined";
-  isNumber?: boolean;
+  type?: textInputType.text | textInputType.password;
   singleSpace?: boolean;
 
   allowClear: boolean;
@@ -57,6 +58,7 @@ const TextInput: FC<ICombinedPageType> = ({
   placeholder,
   autoFocus,
   variant = "borderless",
+  type = textInputType.text,
 
   singleSpace = true,
   allowClear,
@@ -74,57 +76,63 @@ const TextInput: FC<ICombinedPageType> = ({
   const [field, meta] = useField({ name });
   const { setFieldValue } = useFormikContext();
 
+  // handleChange
+  const handleChange = (
+    param: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    let inputValue = param.target.value;
+
+    inputValue = convertToPersianNumbers(inputValue);
+
+    if (singleSpace) {
+      inputValue = String(inputValue).replace(/\s+/g, " ");
+    }
+
+    setFieldValue(name, inputValue);
+
+    if (onChange) {
+      onChange(inputValue);
+    }
+  };
+
+  const commonProps = {
+    name,
+    value: value ?? meta.value ?? undefined,
+    autoComplete: "off",
+    size,
+    placeholder,
+    autoFocus,
+    variant,
+    allowClear,
+    className: `${classNames} 
+      ${
+        !meta.error &&
+        meta.touched &&
+        !disabled &&
+        "border border-solid border-green-500"
+      } 
+      ${meta.error && meta.touched && "border border-solid border-red-500"}`,
+    style: style || { color: "white" },
+    showCount,
+    disabled,
+    maxLength,
+    onChange: handleChange,
+    addonAfter,
+    addonBefore,
+    prefix,
+    suffix,
+  };
+
   return (
     <>
-      <Input
-        name={name}
-        value={value ?? meta.value ?? undefined}
-        autoComplete="off"
-        type={textInputType.text}
-        size={size}
-        placeholder={placeholder}
-        autoFocus={autoFocus}
-        variant={variant}
-        allowClear={allowClear}
-        className={`${classNames} 
-          ${
-            !meta.error &&
-            meta.touched &&
-            !disabled &&
-            "border border-solid border-green-500 "
-          } ${
-          meta.error && meta.touched && "border border-solid border-red-500 "
-        } `}
-        style={
-          style || {
-            color: "white",
-          }
-        }
-        showCount={showCount}
-        disabled={disabled}
-        maxLength={maxLength}
-        onChange={(
-          param: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-        ) => {
-          let inputValue = param.target.value;
-
-          inputValue = convertToPersianNumbers(inputValue);
-
-          if (singleSpace) {
-            inputValue = String(inputValue).replace(/\s+/g, " ");
-          }
-
-          setFieldValue(name, inputValue);
-
-          if (onChange) {
-            onChange(inputValue);
-          }
-        }}
-        addonAfter={addonAfter}
-        addonBefore={addonBefore}
-        prefix={prefix}
-        suffix={suffix}
-      />
+      {type === textInputType.text ? (
+        <Input {...commonProps} />
+      ) : (
+        <Input.Password
+          {...commonProps}
+          iconRender={(visible) => (visible ? <FaEye /> : <FaEyeSlash />)}
+        />
+      )}
 
       <FullErrorMessage name={name} />
     </>
