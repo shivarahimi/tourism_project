@@ -9,7 +9,6 @@ import { TitleLanding } from "#/src/components/common/TItleLanding/TitleLanding"
 import { TextInput } from "@/components/common/Form/TextInput/TextInput";
 // enum
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
-import { FaUser } from "react-icons/fa";
 
 const ContactForm = () => {
   return (
