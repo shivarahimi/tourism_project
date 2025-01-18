@@ -8,6 +8,7 @@ import { TitleLanding } from "#/src/components/common/TItleLanding/TitleLanding"
 import { TextInput } from "@/components/common/Form/TextInput/TextInput";
 // enum
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
+import { textInputType } from "#/src/core/enums/textInput-type.enum";
 
 const ContactForm = () => {
   return (

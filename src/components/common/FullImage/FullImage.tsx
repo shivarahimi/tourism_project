@@ -13,6 +13,7 @@ interface IFUllImagePropType {
   objectFit?: "contain" | "cover" | "fill";
   style?: React.CSSProperties;
   quality?: number;
+  onClick?: () => void;
 }
 
 const FullImage: FC<IFUllImagePropType> = ({
@@ -24,6 +25,7 @@ const FullImage: FC<IFUllImagePropType> = ({
   objectFit,
   style,
   quality,
+  onClick,
 }) => {
   const defaultImage = "/images/general/img1.jpg";
   return (
@@ -36,6 +38,7 @@ const FullImage: FC<IFUllImagePropType> = ({
         className={` ${className}`}
         priority
         quality={quality}
+        onClick={onClick}
         style={{
           objectFit: objectFit ? objectFit : "cover",
           ...(style ? style : {}),
