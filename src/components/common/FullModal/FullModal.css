@@ -2,8 +2,16 @@
   background-color: transparent;
 }
 
-:where(.css-dev-only-do-not-override-161f05s).ant-modal .ant-modal-close {
-  right: 700px !important;
+@media (min-width: 630px) {
+  :where(.css-dev-only-do-not-override-161f05s).ant-modal .ant-modal-close {
+    right: 480px !important;
+  }
+}
+
+@media (max-width: 550px) {
+  :where(.css-dev-only-do-not-override-161f05s).ant-modal .ant-modal-close {
+    left: 0 !important;
+  }
 }
 
 @keyframes fadeInUp {

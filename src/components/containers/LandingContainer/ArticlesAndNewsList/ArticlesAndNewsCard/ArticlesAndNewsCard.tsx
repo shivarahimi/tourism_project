@@ -15,7 +15,7 @@ const ArticlesAndNewsCard = () => {
       {ArticlesNewsData.slice(0, 6).map((item, index) => (
         <FadeInUp duration={0.5} key={index}>
           <div
-            className={`flex flex-col items-center justify-around xl:justify-between xl:max-w-[1250px] mx-auto mt-8 ${
+            className={`flex flex-col items-center justify-around xl:justify-between xl:max-w-[1250px] mx-auto mt-8 lg:gap-4 xl:gap-0 ${
               index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
             } ${
               index !== ArticlesNewsData.length - 1
