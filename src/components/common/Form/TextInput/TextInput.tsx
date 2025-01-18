@@ -33,7 +33,6 @@ interface ITextInputPropType {
   autoFocus?: boolean;
   variant?: "borderless" | "filled" | "outlined";
   type?: textInputType.text | textInputType.password;
-  isNumber?: boolean;
   singleSpace?: boolean;
 
   allowClear: boolean;
