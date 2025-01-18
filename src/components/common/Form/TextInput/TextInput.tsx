@@ -25,7 +25,6 @@ interface IPasswordType {
   type?: textInputType.password;
 }
 
-// ویژگی‌های کامپوننت
 interface ITextInputPropType {
   name: string;
   value?: string;
@@ -73,7 +72,7 @@ const TextInput: FC<ICombinedPageType> = ({
   // ایکن ها
   addonAfter, //آیکن چپ و دورتر
   addonBefore, // آیکن راست و دورتر
-  prefix, //راست و ایکن چسبیده
+  prefix, // آیکن راست و چسبیده
   suffix, //آِیکن چپ و جسبیده
 }) => {
   const [field, meta] = useField({ name });

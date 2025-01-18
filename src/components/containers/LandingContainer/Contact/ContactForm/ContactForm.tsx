@@ -26,7 +26,6 @@ const ContactForm = () => {
         </div>
 
         {/*input  */}
-
         <div className="grid sm:grid-cols-2 sm:gap-8">
           <div>
             <TextInput
