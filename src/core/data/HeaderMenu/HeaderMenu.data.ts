@@ -3,7 +3,12 @@ export interface IHeaderMenuList {
   title: string;
   href: string;
   exact?: boolean;
-  subMenu?: any;
+  subMenu?: ISubMenu[];
+}
+export interface ISubMenu {
+  id: number;
+  title: string;
+  href: string;
 }
 
 export const headerMenuList: IHeaderMenuList[] = [
@@ -13,8 +18,8 @@ export const headerMenuList: IHeaderMenuList[] = [
     href: "/",
     exact: true,
     subMenu: [
-      { id: "1", title: "لینک ۱", href: "/link1" },
-      { id: "2", title: "لینک ۲", href: "/link2" },
+      { id: 1, title: "لینک ۱", href: "/link1" },
+      { id: 2, title: "لینک ۲", href: "/link2" },
     ],
   },
   {
@@ -22,8 +27,8 @@ export const headerMenuList: IHeaderMenuList[] = [
     title: "درباره ما",
     href: "/about-us",
     subMenu: [
-      { id: "1", title: "اطلاعات ۱", href: "/info1" },
-      { id: "2", title: "اطلاعات ۲", href: "/info2" },
+      { id: 1, title: "اطلاعات ۱", href: "/info1" },
+      { id: 2, title: "اطلاعات ۲", href: "/info2" },
     ],
   },
   {
@@ -31,8 +36,8 @@ export const headerMenuList: IHeaderMenuList[] = [
     title: "تور",
     href: "/tour",
     subMenu: [
-      { id: "1", title: "تور", href: "/info1" },
-      { id: "2", title: "جزئیات سفر", href: "/info2" },
+      { id: 1, title: "تور", href: "/info1" },
+      { id: 2, title: "جزئیات سفر", href: "/info2" },
     ],
   },
   {
@@ -40,9 +45,9 @@ export const headerMenuList: IHeaderMenuList[] = [
     title: "صفحات",
     href: "/pages",
     subMenu: [
-      { id: "1", title: "مقصد یک", href: "/info1" },
-      { id: "2", title: "مقصد دو", href: "/info2" },
-      { id: "3", title: "مقصد سه", href: "/info2" },
+      { id: 1, title: "مقصد یک", href: "/info1" },
+      { id: 2, title: "مقصد دو", href: "/info2" },
+      { id: 3, title: "مقصد سه", href: "/info2" },
     ],
   },
   {
@@ -50,8 +55,8 @@ export const headerMenuList: IHeaderMenuList[] = [
     title: "وبلاگ",
     href: "/blog",
     subMenu: [
-      { id: "1", title: "وبلاگ", href: "/info1" },
-      { id: "2", title: "وبلاگ تکی", href: "/info2" },
+      { id: 1, title: "وبلاگ", href: "/info1" },
+      { id: 2, title: "وبلاگ تکی", href: "/info2" },
     ],
   },
 ];

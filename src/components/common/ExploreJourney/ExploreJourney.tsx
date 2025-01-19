@@ -1,10 +1,12 @@
 // base
-import { ExploreEventDataType } from "#/src/core/data/Landing/ExploreEvent.data";
 import { FC } from "react";
-import { FullButton } from "../Form/FullButton/FullButton";
-import { FullImage } from "../FullImage/FullImage";
-import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
+// components
 import { RightToLeft } from "../Animation/RightToLeft/RightToLeft";
+import { FullImage } from "../FullImage/FullImage";
+import { FullButton } from "../Form/FullButton/FullButton";
+// core
+import { ExploreEventDataType } from "#/src/core/data/Landing/ExploreEvent.data";
+import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
 
 interface IPropType {
   data: ExploreEventDataType;
