@@ -29,7 +29,7 @@ const Headers: FC<IPropType> = () => {
   // searching
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     // e.preventDefault();
-    console.log("Searching for:", searchText);
+    // console.log("Searching for:", searchText);
   };
   // تابع برای مدیریت تغییرات ورودی
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
