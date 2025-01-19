@@ -1,10 +1,10 @@
 // base
+import { FC } from "react";
+// components
 import { ExploreJourney } from "#/src/components/common/ExploreJourney/ExploreJourney";
-import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
+// core
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { ExploreEventData } from "#/src/core/data/Landing/ExploreEvent.data";
-import { FC } from "react";
-import { FaCertificate } from "react-icons/fa";
 
 interface ISharePropType {
   dataType: "exploreEvent" | "startJourney";

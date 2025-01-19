@@ -1,9 +1,10 @@
 // base
-import { RightToLeft } from "#/src/components/common/Animation/RightToLeft/RightToLeft";
+import { FC } from "react";
+// components
 import { ExploreJourney } from "#/src/components/common/ExploreJourney/ExploreJourney";
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
+// core
 import { ExploreEventData } from "#/src/core/data/Landing/ExploreEvent.data";
-import { FC } from "react";
 
 interface ISharePropType {
   dataType: "exploreEvent" | "startJourney";
