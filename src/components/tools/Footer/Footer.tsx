@@ -26,6 +26,7 @@ import {
 
 // style
 import style from "./Footer.module.css";
+import { BsSearch } from "react-icons/bs";
 
 const Footer: FC = () => {
   // modal
@@ -88,10 +89,11 @@ const Footer: FC = () => {
           </div>
         ))}
       </div>
+
       <div className="border-b border-solid border-gray-600 w-[90%] mx-auto mb-[60px] pb-[60px]"></div>
 
-      <div className="grid grid-cols-12 xl:grid-cols-12">
-        <div className="col-span-12 xl:col-span-5">
+      <div className="grid grid-cols-12 xl:grid-cols-12 items-center">
+        <div className="col-span-12 xl:col-span-5 self-end">
           <div className="rounded-xl flex flex-wrap gap-2 sm:justify-center">
             {imageFooter.map((item) => {
               return (
@@ -121,11 +123,34 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        <div className=" col-span-12 lg:col-span-6 xl:col-span-4 pt-4">
-          <h2 className="text-[1.3rem] font-extrabold ">خبرنامه</h2>
+        <div className=" col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4">
+          <h2 className="text-[1.3rem] font-extrabold mt-8 lg:mt-0  ">
+            خبرنامه
+          </h2>
+
+          <div className="relative md:w-full  lg:w-[90%] mt-4">
+            <div className="bg-white p-4  shadow-lg rounded-md ">
+              <input
+                type="email"
+                placeholder="ایمیل خود را واردکنید"
+                className=" h-7 focus:outline-none focus:border-none  text-black "
+              />
+            </div>
+
+            <button
+              className="absolute p-4 left-0 top-0 flex items-center justify-center 
+                          bg-gt-gradient-1  font-bold text-lg rounded-md"
+              type="submit"
+            >
+              اشتراک
+            </button>
+          </div>
         </div>
 
-        <div className=" col-span-12  lg:col-span-6 xl:col-span-2 pt-4">
+        <div
+          className=" col-span-12 md:col-span-6  lg:col-span-6 xl:col-span-2
+                      md:mx-auto md:flex md:flex-col  md:justify-end  pt-4 self-end "
+        >
           <div className="flex items-center md:justify-start">
             <Link href="/" className="flex items-center">
               <FaPhone
