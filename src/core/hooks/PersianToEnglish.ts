@@ -14,17 +14,3 @@ export const convertToPersianNumbers = (input: string) => {
 
   return input.replace(/[0-9]/g, (match) => englishToPersian[match]);
 };
-
-// convertToNumber
-
-// تبدیل رشته به عدد، حذف حروف و کاراکترهای غیر عددی
-export function convertToNumber(inputValue: string): { pureValue: string } {
-  // حذف تمامی کاراکترهای غیر عددی (حروف و علائم)
-  const numericString = inputValue?.toString()?.replace(/[^\d]/g, "");
-  console.log(numericString);
-
-  // در اینجا، خروجی به صورت رشته خواهد بود تا صفر ابتدایی حفظ شود
-  return {
-    pureValue: numericString, // اگر چیزی باقی نماند، "0" را باز می‌گرداند
-  };
-}

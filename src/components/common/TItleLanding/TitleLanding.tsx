@@ -19,8 +19,7 @@ interface IPropType {
   title1: string;
   title2: string;
   className2?: string;
-
-  dataType: "toolsBar" | "popularVideos" | "contact"; // برای مشخص کردن نوع داده
+  dataType?: "toolsBar" | "popularVideos" | "contact"; // برای مشخص کردن نوع داده
 }
 
 const TitleLanding: FC<IPropType> = ({

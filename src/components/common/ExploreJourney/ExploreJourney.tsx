@@ -2,8 +2,8 @@
 import { FC } from "react";
 // components
 import { RightToLeft } from "../Animation/RightToLeft/RightToLeft";
-import { FullButton } from "../FullButton/FullButton";
 import { FullImage } from "../FullImage/FullImage";
+import { FullButton } from "../Form/FullButton/FullButton";
 // core
 import { ExploreEventDataType } from "#/src/core/data/Landing/ExploreEvent.data";
 import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";

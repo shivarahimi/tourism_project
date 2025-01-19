@@ -1,10 +1,13 @@
+"use client";
+
 // base
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import Link from "next/link";
 
 // components
 import { FullImage } from "../../common/FullImage/FullImage";
+import { FullModal } from "../../common/FullModal/FullModal";
 
 // icon
 import { FaArrowLeft, FaPhone } from "react-icons/fa";
@@ -25,8 +28,11 @@ import {
 import style from "./Footer.module.css";
 
 const Footer: FC = () => {
+  // modal
+  const [showImageModal, setshowImageModal] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // برای ذخیره تصویر انتخاب شده
   return (
-    <section className="bg-[#1A1B1D] pt-[4.6rem] text-[#f9f9f9] px-4 lg:px-12 ">
+    <section className="bg-[#1A1B1D]  text-[#f9f9f9] px-4 lg:px-12 ">
       <div className="grid md:grid-cols-12 xl:grid-cols-10 gap-4">
         <div className=" md:col-span-6  xl:col-span-4 ">
           <div>
@@ -89,22 +95,27 @@ const Footer: FC = () => {
           <div className="rounded-xl flex flex-wrap gap-2 sm:justify-center">
             {imageFooter.map((item) => {
               return (
-                <Link href={item.href} key={item.id}>
-                  <div className={`relative ${style.imgFooter}`}>
-                    <FullImage
-                      src={item.img}
-                      alt="فوتر عکس"
-                      width={90}
-                      height={82}
-                      quality={100}
-                      className="rounded-xl w-[90px] h-[82px] object-cover"
-                    />
+                <div
+                  key={item.id}
+                  className={`relative cursor-pointer ${style.imgFooter}`}
+                  onClick={() => {
+                    setshowImageModal(true);
+                    setSelectedImage(item.img);
+                  }}
+                >
+                  <FullImage
+                    src={item.img}
+                    alt="فوتر عکس"
+                    width={90}
+                    height={82}
+                    quality={100}
+                    className="rounded-xl w-[90px] h-[82px] object-cover"
+                  />
 
-                    <div className={`${style.iconOverlay}`}>
-                      <LiaExpandSolid className={`${style.expandicon}`} />
-                    </div>
+                  <div className={`${style.iconOverlay}`}>
+                    <LiaExpandSolid className={`${style.expandicon}`} />
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>
@@ -143,9 +154,30 @@ const Footer: FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center my-8 pb-4">
+      <div className="flex justify-center items-center mt-8 pb-4">
         <p className="sm:text-lg">© کپی رایت 2024. کلیه حقوق محفوظ است.</p>
       </div>
+
+      {showImageModal && selectedImage && (
+        <FullModal
+          isOpen={showImageModal}
+          onCancel={() => {
+            setshowImageModal(false);
+            setSelectedImage(null);
+          }}
+        >
+          <div className="relative">
+            <FullImage
+              src={selectedImage}
+              alt="فوتر عکس بزرگ"
+              width={400}
+              height={100}
+              quality={100}
+              className="rounded-xl w-full h-full object-cover"
+            />
+          </div>
+        </FullModal>
+      )}
     </section>
   );
 };

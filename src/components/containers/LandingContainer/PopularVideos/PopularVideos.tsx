@@ -3,7 +3,6 @@ import { FC } from "react";
 
 // components
 import { TitleLanding } from "#/src/components/common/TItleLanding/TitleLanding";
-
 import { SlideVideos } from "./SlideVideos/SlideVideos";
 import { FeatureItemData } from "#/src/core/data/Landing/Toolbar.data";
 import FeatureItem from "#/src/components/common/FeatureItem/FeatureItem";

@@ -2,17 +2,31 @@
   > input.ant-input,
 :where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
   > textarea.ant-input {
-  /* font-size: inherit; */
-  /* border: none; */
-  /* border-radius: 0; */
-  /* outline: none; */
-  /* background-image: none; */
-  background-color: linear-gradient(90deg, #4300e7 0%, #7d00fc 100%) !important;
-  /* background-color: transparent; */
-  /* color: inherit; */
+  border-radius: none !important;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  background: linear-gradient(90deg, #4300e7 0%, #7d00fc 100%) !important;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > input.ant-input,
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > textarea.ant-input {
+  background: transparent !important;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  .ant-input-clear-icon {
+  position: absolute !important;
+  left: 22px !important;
+  top: 20px !important;
 }
 
 :where(.css-dev-only-do-not-override-161f05s).ant-input-borderless {
-  background-color: linear-gradient(90deg, #4300e7 0%, #7d00fc 100%) !important;
-  border: none;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }

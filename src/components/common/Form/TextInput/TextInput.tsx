@@ -1,14 +1,20 @@
+// base
 import React, { FC } from "react";
+// lib
 import { Input } from "antd";
 import { useField, useFormikContext } from "formik";
 
-import { textInputType } from "#/src/core/enums/textInput-type.enum";
-// import "./TextInput.css";
+// components
+import { FullErrorMessage } from "../FullErrorMessage/FullErrorMessage";
 
-import {
-  convertToNumber,
-  convertToPersianNumbers,
-} from "#/src/core/hooks/PersianToEnglish";
+// enum
+import { textInputType } from "#/src/core/enums/textInput-type.enum";
+// hooks
+import { convertToPersianNumbers } from "#/src/core/hooks/PersianToEnglish";
+// icon
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
+import "./TextInput.css";
 
 // نوع‌های ورودی
 interface ITextType {
@@ -19,14 +25,14 @@ interface IPasswordType {
   type?: textInputType.password;
 }
 
-// ویژگی‌های کامپوننت
 interface ITextInputPropType {
   name: string;
   value?: string;
   size?: "middle" | "small" | "large";
   placeholder: string;
+  autoFocus?: boolean;
   variant?: "borderless" | "filled" | "outlined";
-  isNumber?: boolean;
+  type?: textInputType.text | textInputType.password;
   singleSpace?: boolean;
 
   allowClear: boolean;
@@ -50,8 +56,10 @@ const TextInput: FC<ICombinedPageType> = ({
   value,
   size = "large",
   placeholder,
+  autoFocus,
   variant = "borderless",
-  isNumber,
+  type = textInputType.text,
+
   singleSpace = true,
   allowClear,
   classNames,
@@ -60,67 +68,77 @@ const TextInput: FC<ICombinedPageType> = ({
   disabled = false,
   maxLength = 200,
   onChange,
-  addonAfter,
-  addonBefore,
-  prefix,
-  suffix,
+
+  // ایکن ها
+  addonAfter, //آیکن چپ و دورتر
+  addonBefore, // آیکن راست و دورتر
+  prefix, // آیکن راست و چسبیده
+  suffix, //آِیکن چپ و جسبیده
 }) => {
   const [field, meta] = useField({ name });
   const { setFieldValue } = useFormikContext();
 
+  // handleChange
+  const handleChange = (
+    param: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    let inputValue = param.target.value;
+
+    inputValue = convertToPersianNumbers(inputValue);
+
+    if (singleSpace) {
+      inputValue = String(inputValue).replace(/\s+/g, " ");
+    }
+
+    setFieldValue(name, inputValue);
+
+    if (onChange) {
+      onChange(inputValue);
+    }
+  };
+
+  const commonProps = {
+    name,
+    value: value ?? meta.value ?? undefined,
+    autoComplete: "off",
+    size,
+    placeholder,
+    autoFocus,
+    variant,
+    allowClear,
+    className: `${classNames} 
+    ${
+      !meta.error &&
+      meta.touched &&
+      !disabled &&
+      "border border-solid border-green-500"
+    } 
+    ${meta.error && meta.touched && "border border-solid border-red-500"}`,
+    style: style || { color: "white" },
+    showCount,
+    disabled,
+    maxLength,
+    onChange: handleChange,
+
+    addonAfter,
+    addonBefore,
+    prefix,
+    suffix,
+  };
+
   return (
-    <Input
-      name={name}
-      value={
-        isNumber
-          ? convertToNumber(value ? value : meta.value).pureValue
-          : value
-          ? value
-          : meta.value
-          ? meta.value
-          : undefined
-      }
-      type={textInputType.text}
-      size={size}
-      placeholder={placeholder}
-      variant={variant}
-      allowClear={allowClear}
-      className={`!border-b-2 !border-solid !border-white h-[40px] text-base mb-[33px] bg-transparent
-        font-semibold text-white w-full !border-t-0 !border-l-0 !border-r-0 rounded-none
-        ${classNames}`}
-      style={
-        style || {
-          color: "white",
-          backgroundColor: "red",
-        }
-      }
-      showCount={showCount}
-      disabled={disabled}
-      maxLength={maxLength}
-      onChange={(
-        param: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-      ) => {
-        let inputValue = param.target.value;
+    <>
+      {type === textInputType.text ? (
+        <Input {...commonProps} />
+      ) : (
+        <Input.Password
+          {...commonProps}
+          iconRender={(visible) => (visible ? <FaEye /> : <FaEyeSlash />)}
+        />
+      )}
 
-        inputValue = convertToPersianNumbers(inputValue);
-
-        // inputValue = inputValue.replace(/[^0-9]/g, "");
-
-        // if (inputValue.length > 11) {
-        //   inputValue = inputValue.slice(0, 11);
-        // }
-
-        setFieldValue(name, inputValue);
-
-        if (onChange) {
-          onChange(inputValue);
-        }
-      }}
-      addonAfter={addonAfter}
-      addonBefore={addonBefore}
-      prefix={prefix}
-      suffix={suffix}
-    />
+      <FullErrorMessage name={name} />
+    </>
   );
 };
 
