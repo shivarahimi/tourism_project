@@ -1,0 +1,11 @@
+/* برای تفکیک استایل های متفاوت مودال searchInput */
+.searchInput .ant-modal-content{
+  padding: 0px !important;
+}
+.searchInput .ant-modal-content .ant-modal-close .ant-modal-close-x span svg{
+  color: white;
+  font-size: 32px;
+  position: absolute;
+  left: 890px;
+  bottom: 300px;
+}
