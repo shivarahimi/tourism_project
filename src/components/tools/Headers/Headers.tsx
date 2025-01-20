@@ -1,35 +1,37 @@
 "use client";
 // base
-import { FC, useState } from "react";
 import Link from "next/link";
+import { FC, useState } from "react";
 // lib
+import { Form, Formik } from "formik";
 import { BsSearch } from "react-icons/bs";
 import { FaAngleDown, FaRegComment } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
 // components
-import { HeaderResponsive } from "./HeaderResponsive/HeaderResponsive";
-import { FullImage } from "../../common/FullImage/FullImage";
-import { Intro } from "../../containers/LandingContainer/Intro/Intro";
 import { SearchInput } from "../../common/Form/SearchInput/SearchInput";
+import { FullImage } from "../../common/FullImage/FullImage";
+import { FullModal } from "../../common/FullModal/FullModal";
+import { Intro } from "../../containers/LandingContainer/Intro/Intro";
+import { HeaderResponsive } from "./HeaderResponsive/HeaderResponsive";
 // core
 import {
   headerMenuList,
   ISubMenu,
 } from "@/core/data/HeaderMenu/HeaderMenu.data";
-import { Form, Formik } from "formik";
+
+import "../../common/Form/SearchInput/SearchInput.css";
 
 interface IPropType {}
 
 const Headers: FC<IPropType> = () => {
   const defaultImage = "/images/landing/Headers/logo-2.png";
-  const [initialValues, setInitialValues] = useState<any>({});
+  const [initialValues] = useState<any>({});
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
 
   // searching
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     // e.preventDefault();
-    // console.log("Searching for:", searchText);
+    console.log("Searching for:", searchText);
   };
   // تابع برای مدیریت تغییرات ورودی
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,8 +85,14 @@ const Headers: FC<IPropType> = () => {
 
             <BsSearch onClick={() => setIsOverlayVisible(true)} />
             {isOverlayVisible && (
-              <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center">
-                {/* محتوای داخل لایه */}
+              <FullModal
+                isOpen={isOverlayVisible}
+                onCancel={() => {
+                  setIsOverlayVisible(false);
+                }}
+                maskClosable={false}
+                classNames="searchInput"
+              >
                 <Formik
                   initialValues={initialValues}
                   onSubmit={handleSearch}
@@ -99,14 +107,7 @@ const Headers: FC<IPropType> = () => {
                     </Form>
                   )}
                 </Formik>
-
-                <button
-                  onClick={() => setIsOverlayVisible(false)}
-                  className="absolute top-10 right-10 p-3 rounded-lg text-white bg-gt-gradient-1"
-                >
-                  <AiOutlineClose size={20} />
-                </button>
-              </div>
+              </FullModal>
             )}
           </div>
         </section>
