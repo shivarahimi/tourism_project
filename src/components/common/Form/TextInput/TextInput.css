@@ -3,8 +3,6 @@
 :where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
   > textarea.ant-input {
   border-radius: none !important;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
@@ -16,13 +14,6 @@
 :where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
   > textarea.ant-input {
   background: transparent !important;
-}
-
-:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
-  .ant-input-clear-icon {
-  position: absolute !important;
-  left: 22px !important;
-  top: 20px !important;
 }
 
 :where(.css-dev-only-do-not-override-161f05s).ant-input-borderless {

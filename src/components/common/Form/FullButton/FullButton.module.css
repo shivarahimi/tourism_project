@@ -18,7 +18,6 @@
   width: 100%;
   height: 0%;
   content: "";
-  border-radius: 50px;
   position: absolute;
   background-color: #000;
   -webkit-transition: all 500ms ease;
@@ -40,6 +39,12 @@
 
 .btn a:hover .textLink {
   animation: gt-spin 0.5s ease-in-out forwards;
+  color: #fff !important;
+}
+
+.btnAuthtextLink a:hover .textLink {
+  animation: gt-spin 0.5s ease-in-out forwards;
+  color: #fff !important;
 }
 
 /* انیمیشن چرخش متن */

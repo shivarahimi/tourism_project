@@ -1,0 +1,52 @@
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > input.ant-input {
+  width: 90%;
+  display: flex;
+  border-bottom: 1px solid #d8d8d8;
+  border-radius: none;
+  color: #d8d8d8;
+  margin: 0 auto;
+  padding: 6px 30px;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > input.ant-input:focus {
+  border-bottom: 1px solid #222 !important;
+  color: #222 !important;
+  outline: none !important;
+}
+
+/* :where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > input.ant-input::placeholder {
+  color: #222 !important;
+} */
+
+/* تغییر رنگ placeholder در حالت فوکوس */
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > input.ant-input:focus::placeholder {
+  color: #222 !important;
+}
+
+.anticon.anticon-close-circle {
+  position: absolute !important;
+  left: 44px !important;
+  top: 20px !important;
+}
+
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper::before {
+  content: "" !important;
+}
+
+.ant-input-prefix {
+  position: absolute !important;
+  right: 43px !important;
+  top: 20px !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+@media (max-width: 425px) {
+  .ant-input-prefix {
+    right: 32px !important;
+  }
+}
