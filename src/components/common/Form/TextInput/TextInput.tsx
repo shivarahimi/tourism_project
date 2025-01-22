@@ -35,7 +35,7 @@ interface ITextInputPropType {
   type?: textInputType.text | textInputType.password;
   singleSpace?: boolean;
 
-  allowClear: boolean;
+  allowClear?: boolean;
   classNames?: string | undefined;
   style?: React.CSSProperties;
   showCount?: boolean;
