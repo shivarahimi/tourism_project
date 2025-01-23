@@ -10,6 +10,9 @@ import { TextInput } from "@/components/common/Form/TextInput/TextInput";
 // enum
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 
+// css
+import "./ContactForm.css";
+
 const ContactForm = () => {
   return (
     <Suspense>
@@ -31,14 +34,14 @@ const ContactForm = () => {
               name="userName"
               placeholder="نام شما"
               allowClear
-              classNames="border-b-white mb-[33px] h-[50px] w-[100%]"
+              classNames="border-b-white !border-b-2 border-solid rounded-none text-white mb-[33px] h-[50px] w-[100%]"
             />
 
             <TextInput
               name="email"
               placeholder="ایمیل شما"
               allowClear
-              classNames="border-white mb-[33px] h-[50px] w-[100%]"
+              classNames="border-b-white !border-b-2 border-solid rounded-none  text-white mb-[33px] h-[50px] w-[100%]"
             />
           </div>
 
@@ -48,13 +51,13 @@ const ContactForm = () => {
               placeholder="موبایل"
               allowClear
               maxLength={11}
-              classNames="border-b-white mb-[33px] h-[50px] w-[100%]"
+              classNames="border-b-white !border-b-2 border-solid rounded-none   text-white mb-[33px] h-[50px] w-[100%]"
             />
             <TextInput
               name="message"
               placeholder="پیام شما"
               allowClear
-              classNames="border-b-white  mb-[33px] h-[50px] w-[100%]"
+              classNames="border-b-white !border-b-2 border-solid rounded-none  text-white  mb-[33px] h-[50px] w-[100%]"
             />
           </div>
         </div>
@@ -65,7 +68,7 @@ const ContactForm = () => {
               name="textQuot"
               placeholder=" چه طور میتونم کمکت کنم ؟"
               allowClear
-              classNames="border-b-white mb-[33px] h-[50px] w-[100%]"
+              classNames="border-b-white !border-b-2 border-solid  rounded-none  text-white mb-[33px] h-[50px] w-[100%]"
             />
           </div>
         </div>

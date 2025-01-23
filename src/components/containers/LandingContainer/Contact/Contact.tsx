@@ -14,7 +14,7 @@ import { items } from "#/src/core/data/Contact/Contact";
 import { ContactForm } from "./ContactForm/ContactForm";
 
 // type
-import { IContactValues } from "#/src/core/types/Contact/Contact.values";
+import { IContactValues } from "#/src/core/types/formikValues/Contact/Contact.values";
 
 const Contact = () => {
   const [initialValues, setInitialValues] = useState<IContactValues>({
