@@ -8,7 +8,7 @@ import { Form, Formik } from "formik";
 
 // components
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
-import RegisterForm from "#/src/app/(auth)/register/RegisterForm/RegisterForm";
+import RegisterContainer from "#/src/components/containers/(Auth)/RegisterContainer/RegisterContainer";
 
 // typse
 import { IRegisterValues } from "#/src/core/types/Register/Register.values";
@@ -45,7 +45,7 @@ const Register = () => {
                   <h2 className="text-xl text-white font-bold text-center m-8">
                     ثبت نام
                   </h2>
-                  <RegisterForm />
+                  <RegisterContainer />
                 </Form>
               )}
             </Formik>

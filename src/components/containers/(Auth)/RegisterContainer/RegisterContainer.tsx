@@ -13,9 +13,9 @@ import { FaLock, FaUser } from "react-icons/fa";
 // enum
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 
-import "./RegisterForm.css";
+import "./RegisterContainer.css";
 
-const RegisterForm = () => {
+const RegisterContainer = () => {
   return (
     <>
       <TextInput
@@ -73,4 +73,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default RegisterContainer;
