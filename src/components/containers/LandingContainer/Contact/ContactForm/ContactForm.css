@@ -1,0 +1,11 @@
+.anticon.anticon-close-circle {
+  position: absolute;
+  left: 2px;
+  top: 20px;
+}
+
+/* تغییر رنگ placeholder در حالت فوکوس */
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > input.ant-input::placeholder {
+  color: white !important;
+}

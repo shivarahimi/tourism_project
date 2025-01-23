@@ -106,7 +106,7 @@ const TextInput: FC<ICombinedPageType> = ({
     autoFocus,
     variant,
     allowClear,
-    className: `${classNames} 
+    className: ` relative ${classNames} 
     ${
       !meta.error &&
       meta.touched &&
@@ -114,7 +114,7 @@ const TextInput: FC<ICombinedPageType> = ({
       "border border-solid border-green-500"
     } 
     ${meta.error && meta.touched && "border border-solid border-red-500"}`,
-    style: style || { color: "white" },
+    style: style,
     showCount,
     disabled,
     maxLength,
@@ -127,7 +127,7 @@ const TextInput: FC<ICombinedPageType> = ({
   };
 
   return (
-    <>
+    <div>
       {type === textInputType.text ? (
         <Input {...commonProps} />
       ) : (
@@ -138,7 +138,7 @@ const TextInput: FC<ICombinedPageType> = ({
       )}
 
       <FullErrorMessage name={name} />
-    </>
+    </div>
   );
 };
 
