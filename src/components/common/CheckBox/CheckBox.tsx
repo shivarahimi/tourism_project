@@ -15,21 +15,14 @@ const CheckBox: FC<IPropType> = ({ name, className }) => {
     setChecked(e.target.checked);
   };
   return (
-    <div>
-      <Checkbox
-        name={name}
-        checked={checked}
-        onChange={onChange}
-        className={className}
-      >
-        مرا بخاطر بسپار
-      </Checkbox>
-      {/* <p>
-        {checked
-          ? "شما شرایط و قوانین را پذیرفته‌اید."
-          : "شما شرایط و قوانین را نپذیرفته‌اید."}
-      </p> */}
-    </div>
+    <Checkbox
+      name={name}
+      checked={checked}
+      onChange={onChange}
+      className={className}
+    >
+      مرا بخاطر بسپار
+    </Checkbox>
   );
 };
 
