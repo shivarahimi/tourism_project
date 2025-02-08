@@ -9,7 +9,6 @@ interface IPropType {
 
 const CheckBox: FC<IPropType> = ({ name, className }) => {
   const [checked, setChecked] = useState(false);
-  console.log("checked", checked);
 
   const onChange = (e: any) => {
     setChecked(e.target.checked);

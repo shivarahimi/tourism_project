@@ -27,7 +27,6 @@ const LoginContainer: FC<IPropType> = () => {
       />
       <CheckBox name="rememberCheck" className=" mb-6 mt-1" />
       <Button htmlType="submit">login</Button>
-      {/* <FullButton text="ورود" className="w-[80%] mt-8" /> */}
     </section>
   );
 };

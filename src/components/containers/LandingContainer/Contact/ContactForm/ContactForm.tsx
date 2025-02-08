@@ -76,6 +76,7 @@ const ContactForm = () => {
         <div>
           <div>
             <Button
+              htmlType="submit"
               className="bg-[#1a1b1d] text-white border-none text-[1.2rem] mt-8
                       font-extrabold py-[28px] px-[40px] rounded-[30px] transition-all duration-500 ease-in-out
                      hover:!bg-white hover:!text-black "

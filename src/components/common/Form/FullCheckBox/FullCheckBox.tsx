@@ -25,7 +25,7 @@ const FullCheckBox: FC<IFullCheckBoxType> = ({
   onChange,
   className,
 }) => {
-  const [field, meta] = useField({ name });
+  const [meta] = useField({ name });
   const { setFieldValue } = useFormikContext();
 
   return (
