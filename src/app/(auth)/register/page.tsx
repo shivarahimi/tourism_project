@@ -33,7 +33,7 @@ const Register = () => {
       <div className="w-[90%] lg:w-[80%] mx-auto shadow-md rounded-2xl">
         <div className="grid lg:grid-cols-2  ">
           {/* formik */}
-          <div className="bg-gt-gradient-1 rounded-tr-2xl  lg:rounded-br-2xl rounded-tl-2xl lg:rounded-tl-none ">
+          <div className="bg-white rounded-tr-2xl  lg:rounded-br-2xl rounded-tl-2xl lg:rounded-tl-none ">
             <Formik
               initialValues={initialValues}
               enableReinitialize
@@ -52,7 +52,7 @@ const Register = () => {
           </div>
 
           <div className=" bg-white flex justify-center rounded-tl-2xl  !rounded-bl-2xl p-16">
-            <FullImage src={img1.src} alt="عکس" width={300} height={300} />
+            {/* <FullImage src={img1.src} alt="عکس" width={300} height={300} /> */}
           </div>
         </div>
       </div>

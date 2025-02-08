@@ -72,7 +72,7 @@ const TextInput: FC<ICombinedPageType> = ({
   // ایکن ها
   addonAfter, //آیکن چپ و دورتر
   addonBefore, // آیکن راست و دورتر
-  prefix, // آیکن راست و چسبیده
+  prefix, // آیکن راست  چسبیده
   suffix, //آِیکن چپ و جسبیده
 }) => {
   const [field, meta] = useField({ name });
