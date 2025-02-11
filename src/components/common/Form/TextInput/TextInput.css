@@ -16,7 +16,7 @@
   background: transparent !important;
 }
 
-:where(.css-dev-only-do-not-override-161f05s).ant-input-borderless {
+.ant-input-affix-wrapper {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;

@@ -1,10 +1,12 @@
 // components
 import { FadeInUp } from "#/src/components/common/Animation/FadeInUp/FadeInUp";
+import { CustomeButton } from "#/src/components/common/Form/CustomeButton/CustomeButton";
 import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 
 // data
 import { ArticlesNewsData } from "#/src/core/data/ArticlesNews/ArticlesNews.data";
+import { Button } from "antd";
 
 // icon
 import { FaRegComment, FaRegUser } from "react-icons/fa";
@@ -70,7 +72,7 @@ const ArticlesAndNewsCard = () => {
               </div>
 
               <div>
-                <FullButton text="ادامه مطالب" className="mt-8" />
+                <CustomeButton text="ادامه مطالب" className="mt-8" />
               </div>
             </div>
           </div>

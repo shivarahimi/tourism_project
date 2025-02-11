@@ -2,18 +2,19 @@
 import Link from "next/link";
 
 // common
-import { TextInput } from "#/src/components/common/Form/TextInput/TextInput";
-import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 import { FullCheckBox } from "#/src/components/common/Form/FullCheckBox/FullCheckBox";
+import { TextInput } from "#/src/components/common/Form/TextInput/TextInput";
 
 // icon
-import { MdEmail } from "react-icons/md";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { FaLock, FaUser } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 // enum
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 
 import "./RegisterContainer.css";
+import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 
 const RegisterContainer = () => {
   return (
@@ -22,45 +23,60 @@ const RegisterContainer = () => {
         name="userName"
         placeholder="نام شما"
         allowClear
-        classNames="mb-2"
-        prefix={<FaUser className="" />}
+        classNames="rounded-none  mb-2 textInput"
+        prefix={
+          <div className="flex items-center">
+            <FaUser className="text-[#222]" />
+          </div>
+        }
       />
       <TextInput
         name="email"
         placeholder="ایمیل شما"
         allowClear
-        classNames="mb-2"
-        prefix={<MdEmail />}
+        classNames="rounded-none mb-2 textInput"
+        prefix={
+          <div className="flex items-center">
+            <MdEmail className="text-[#222]" />
+          </div>
+        }
       />
       <TextInput
         name="password"
         placeholder="پسورد"
         allowClear
-        classNames="mb-2"
-        prefix={<FaLock />}
+        classNames="rounded-none  mb-2 textInput"
+        prefix={
+          <div className="flex items-center">
+            <FaLock className="text-[#222]" />
+          </div>
+        }
       />
       <TextInput
         name="passwordConfirm"
         placeholder="تکرارپسورد"
         allowClear
-        classNames="mb-2"
-        prefix={<IoLockClosedOutline />}
+        classNames="rounded-none  mb-2 textInput"
+        prefix={
+          <div className="flex items-center">
+            <IoLockClosedOutline className="text-[#222]" />
+          </div>
+        }
       />
 
-      <div className=" mx-8 mt-4 ">
+      <div className=" mx-4 mt-4 ">
         <FullCheckBox
           name="termsAndConditions"
           text="من با تمام اظهارات در شرایط موافقم"
         />
       </div>
 
-      <div>
-        <FullButton
-          text="رزرو"
-          className="mt-8 mb-4 flex justify-center"
-          dataType={dataTypePageEnum.register}
-        />
-      </div>
+      <FullButton
+        text=" ثبت نام "
+        className="mt-6 mr-2 px-8 py-6"
+        hasBaseBtn
+        type="primary"
+      />
 
       <div className="flex items-center justify-center mb-4">
         <span>
