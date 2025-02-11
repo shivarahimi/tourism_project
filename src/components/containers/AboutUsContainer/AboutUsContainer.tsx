@@ -1,9 +1,7 @@
 // base
 import { FC } from "react";
 
-interface IPropType {}
-
-const AboutUsContainer: FC<IPropType> = () => {
+const AboutUsContainer: FC = () => {
   return <h1>AboutUsContainer</h1>;
 };
 

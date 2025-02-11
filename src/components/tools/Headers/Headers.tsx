@@ -20,9 +20,7 @@ import {
 
 import "../../common/Form/SearchInput/SearchInput.css";
 
-interface IPropType {}
-
-const Headers: FC<IPropType> = () => {
+const Headers: FC = () => {
   const defaultImage = "/images/landing/Headers/logo-2.png";
   const [initialValues] = useState<any>({});
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);

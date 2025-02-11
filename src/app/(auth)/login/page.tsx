@@ -9,11 +9,9 @@ import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { LoginContainer } from "#/src/components/containers/(Auth)/LoginContainer/LoginContainer";
 import { ILoginValues } from "#/src/core/types/Login/Login.values";
 
-interface IPropType {}
-
-const Login: FC<IPropType> = () => {
+const Login: FC = () => {
   const defaultImage = "/images/auth/login/signin-image.jpg";
-  const [initialValues, setInitialValues] = useState<ILoginValues>({
+  const [initialValues] = useState<ILoginValues>({
     userName: "",
     password: "",
     rememberCheck: false,
@@ -45,7 +43,7 @@ const Login: FC<IPropType> = () => {
             height={300}
             className="mb-12"
           />
-          <Link href="" className="underline">
+          <Link href="/register" className="underline">
             ایجاد حساب کاربری
           </Link>
         </div>

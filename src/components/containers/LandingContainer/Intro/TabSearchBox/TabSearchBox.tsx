@@ -5,11 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
 import { BsFillCalendarFill, BsSearch } from "react-icons/bs";
 import { FaMapMarkedAlt, FaPlaneDeparture } from "react-icons/fa";
-import style from "../TabSearchBox/TabSearchBox.module.css";
 
-interface IPropType {}
-
-const TabSearchBox: FC<IPropType> = () => {
+const TabSearchBox: FC = () => {
   const [activeTab, setActiveTab] = useState("1");
   const tabContent = [
     {

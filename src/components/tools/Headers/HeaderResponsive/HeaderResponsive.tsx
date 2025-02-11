@@ -18,14 +18,13 @@ import {
   ISubMenu,
 } from "#/src/core/data/HeaderMenu/HeaderMenu.data";
 
-interface IPropType {}
-
-const HeaderResponsive: FC<IPropType> = () => {
+const HeaderResponsive: FC = () => {
   const defaultImage = "/images/landing/Headers/logo-2.png";
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   // کلید منوهای باز شده در اینجا ذخیره بشه
   // فیلتر برای حذف آیتم بسته شده از آرایه
+  // برای زمانیکه چندین زیر منو داریم
   const [openSubmenus, setOpenSubmenus] = useState<string[]>([]);
 
   const toggleSubmenu = (key: string) => {

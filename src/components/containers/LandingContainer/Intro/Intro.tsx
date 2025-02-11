@@ -9,9 +9,7 @@ import { RightToLeftImg } from "#/src/components/common/Animation/RightToLeftImg
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
 import { TabSearchBox } from "./TabSearchBox/TabSearchBox";
 
-interface IPropType {}
-
-const Intro: FC<IPropType> = () => {
+const Intro: FC = () => {
   const defaultImage1 = "/images/landing/Intro/banner_men.png";
   const defaultImage2 = "/images/landing/Intro/cloud2.png";
   const defaultImage3 = "/images/landing/Intro/plane1.png";
