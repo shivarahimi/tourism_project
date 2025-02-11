@@ -1,7 +1,7 @@
 // base
 import { FC } from "react";
 // components
-import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
+import { FullButton } from "#/src/components/common/Form/CustomeButton/CustomeButton";
 import { TextInput } from "#/src/components/common/Form/TextInput/TextInput";
 import { CheckBox } from "#/src/components/common/CheckBox/CheckBox";
 // core

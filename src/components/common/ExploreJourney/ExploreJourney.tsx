@@ -3,10 +3,11 @@ import { FC } from "react";
 // components
 import { RightToLeft } from "../Animation/RightToLeft/RightToLeft";
 import { FullImage } from "../FullImage/FullImage";
-import { FullButton } from "../Form/FullButton/FullButton";
+import { CustomeButton } from "../Form/CustomeButton/CustomeButton";
 // core
 import { ExploreEventDataType } from "#/src/core/data/Landing/ExploreEvent.data";
 import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
+import { FullButton } from "../Form/FullButton/FullButton";
 
 interface IPropType {
   data: ExploreEventDataType;
@@ -87,7 +88,7 @@ const ExploreJourney: FC<IPropType> = ({ data, dataType }) => {
             ))}
           </ul>
         </div>
-        <FullButton text="رزرو" className="w-[80%] mt-8" />
+        <CustomeButton text="رزرو" className="w-[80%] mt-8" />
       </div>
     </section>
   );

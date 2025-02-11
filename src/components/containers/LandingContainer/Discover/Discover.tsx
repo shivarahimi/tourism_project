@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 // components
 import { FullImage } from "#/src/components/common/FullImage/FullImage";
-import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
+import { CustomeButton } from "#/src/components/common/Form/CustomeButton/CustomeButton";
 
 // anim
 import { RightToLeft } from "#/src/components/common/Animation/RightToLeft/RightToLeft";
@@ -216,7 +216,7 @@ const Discover: FC = () => {
           </p>
         </motion.div>
 
-        <FullButton text="رزرو" className="w-[80%] mt-8" />
+        <CustomeButton text="رزرو" className="w-[80%] mt-8" />
       </div>
     </section>
   );

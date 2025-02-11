@@ -12,6 +12,7 @@ import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 
 // css
 import "./ContactForm.css";
+import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 
 const ContactForm = () => {
   return (
@@ -75,14 +76,13 @@ const ContactForm = () => {
 
         <div>
           <div>
-            <Button
-              htmlType="submit"
+            <FullButton
+              text="  رزرو "
               className="bg-[#1a1b1d] text-white border-none text-[1.2rem] mt-8
-                      font-extrabold py-[28px] px-[40px] rounded-[30px] transition-all duration-500 ease-in-out
-                     hover:!bg-white hover:!text-black "
-            >
-              رزرو
-            </Button>
+              font-extrabold py-[28px] px-[40px] rounded-[30px] transition-all duration-500 ease-in-out
+             hover:!bg-white hover:!text-black "
+              hasBaseBtn
+            />
           </div>
         </div>
       </section>
