@@ -2,15 +2,14 @@
 import { FC } from "react";
 
 // components
-import { Intro } from "./Intro/Intro";
-import { ToolsBar } from "./ToolsBar/ToolsBar";
-import { Discover } from "./Discover/Discover";
-import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
-import { PopularVideos } from "./PopularVideos/PopularVideos";
 import { ArticlesAndNewsList } from "./ArticlesAndNewsList/ArticlesAndNewsList";
 import { Contact } from "./Contact/Contact";
-import { StartJourney } from "./StartJourney/StartJourney";
+import { Discover } from "./Discover/Discover";
 import { ExploreEvent } from "./ExploreEvent/ExploreEvent";
+import { FavoriteTour } from "./FavoriteTour/FavoriteTour";
+import { PopularVideos } from "./PopularVideos/PopularVideos";
+import { StartJourney } from "./StartJourney/StartJourney";
+import { ToolsBar } from "./ToolsBar/ToolsBar";
 // type
 import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 import { exploreEventTypeEnum } from "#/src/core/enums/exploreEventType.enum";
