@@ -29,11 +29,11 @@ const Register = () => {
   };
 
   return (
-    <section className="bg-[#F7FBFF] lg:h-screen flex items-center justify-center py-8 lg:py-0">
+    <section className="bg-[#F8f8f8] lg:h-screen flex items-center justify-center py-8 lg:py-0">
       <div className="w-[90%] lg:w-[80%] mx-auto shadow-md rounded-2xl">
         <div className="grid lg:grid-cols-2  ">
           {/* formik */}
-          <div className="bg-gt-gradient-1 rounded-tr-2xl  lg:rounded-br-2xl rounded-tl-2xl lg:rounded-tl-none ">
+          <div className="bg-white rounded-tr-2xl  lg:rounded-br-2xl rounded-tl-2xl lg:rounded-tl-none px-16">
             <Formik
               initialValues={initialValues}
               enableReinitialize
@@ -52,7 +52,7 @@ const Register = () => {
           </div>
 
           <div className=" bg-white flex justify-center rounded-tl-2xl  !rounded-bl-2xl p-16">
-            <FullImage src={img1.src} alt="عکس" width={300} height={300} />
+            <FullImage src={img1.src} alt="عکس" width={400} height={400} />
           </div>
         </div>
       </div>

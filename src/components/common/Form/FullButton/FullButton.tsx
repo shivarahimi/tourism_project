@@ -1,42 +1,122 @@
-// base
-import Link from "next/link";
 import { FC } from "react";
 
-// css
-import style from "./FullButton.module.css";
-import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
+import { Button } from "antd";
 
-interface IFullButtonType {
+// core
+import { htmlTypeButtonEnum } from "#/src/core/enums/htmlTypeButton.enum";
+import { BiSearch, BiTrash } from "react-icons/bi";
+
+interface IFullButton {
+  type?: "primary" | "dashed" | "link" | "text" | "default";
+  shape?: "default" | "circle" | "round";
+  size?: "large" | "middle" | "small";
+  disabled?: boolean;
+
+  htmlType?: htmlTypeButtonEnum;
+  hasBaseBtn?: boolean;
   text: string;
-  className: string;
-  href?: string;
-  dataType?: "register" | "login" | "auth";
+  loading?: boolean;
+  className?: string;
+  icon?: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+
+  hasSearchBtn?: boolean;
+  searchTextBtn?: string;
+  searchHtmlTypeBtn?: htmlTypeButtonEnum;
+  searchShapeBtn?: "default" | "circle" | "round";
+  searchClassNameBtn?: string;
+  searchLoadingBtn?: boolean;
+  searchIcon?: boolean;
+  searchOnClickBtn?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+
+  hasClearBtn?: boolean;
+  clearTextBtn?: string;
+  clearHtmlTypeBtn?: htmlTypeButtonEnum;
+  clearShapeBtn?: "default" | "circle" | "round";
+  clearClassNameBtn?: string;
+  clearLoadingBtn?: boolean;
+  clearIcon?: boolean;
+  clearOnClickBtn?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
-const FullButton: FC<IFullButtonType> = ({
+const FullButton: FC<IFullButton> = ({
+  htmlType,
+  type,
+  size = "middle",
+  disabled,
+
+  hasBaseBtn,
   text,
+  shape = "default",
   className,
-  href,
-  dataType,
+  loading,
+  icon,
+  onClick,
+
+  hasSearchBtn,
+  searchTextBtn,
+  searchHtmlTypeBtn,
+  searchShapeBtn,
+  searchClassNameBtn,
+  searchLoadingBtn,
+  searchIcon,
+  searchOnClickBtn,
+
+  hasClearBtn,
+  clearTextBtn,
+  clearHtmlTypeBtn,
+  clearShapeBtn,
+  clearClassNameBtn,
+  clearLoadingBtn,
+  clearIcon,
+  clearOnClickBtn,
 }) => {
-  const register =
-    dataType === dataTypePageEnum.register
-      ? "bg-white !text-black !rounded-[4px]"
-      : "bg-gt-gradient-1";
-
-  const btnAuth = `${style.btn} ${
-    dataType === dataTypePageEnum.auth ? "rounded-[4px]" : "rounded-[50px]"
-  }`;
-
-  const btnAuthtextLink =
-    dataType === dataTypePageEnum.auth ? style.btnAuthtextLink : style.textLink;
-
   return (
-    <div className={`${className} ${btnAuth}`}>
-      <Link href={href || "/"} className={`${register}`}>
-        <span className={`${btnAuthtextLink}`}>{text}</span>
-      </Link>
-    </div>
+    <section>
+      {hasBaseBtn && (
+        <Button
+          htmlType={htmlType ? htmlType : htmlTypeButtonEnum.submit}
+          type={type ? type : "default"}
+          shape={shape}
+          size={size}
+          className={className}
+          disabled={disabled}
+          loading={loading}
+          icon={icon}
+          onClick={onClick}
+        >
+          {text}
+        </Button>
+      )}
+
+      {hasSearchBtn && (
+        <Button
+          htmlType={searchHtmlTypeBtn}
+          type={type ? type : "primary"}
+          shape={searchShapeBtn ? searchShapeBtn : "default"}
+          className={searchClassNameBtn}
+          loading={searchLoadingBtn}
+          icon={searchIcon ? searchIcon : <BiSearch />}
+          onClick={searchOnClickBtn}
+        >
+          {searchTextBtn ? searchTextBtn : "جستجو کردن"}
+        </Button>
+      )}
+
+      {hasClearBtn && (
+        <Button
+          htmlType={clearHtmlTypeBtn}
+          type={type ? type : "dashed"}
+          shape={clearShapeBtn ? clearShapeBtn : "default"}
+          className={`px-4  ${clearClassNameBtn}`}
+          loading={clearLoadingBtn}
+          icon={clearIcon ? clearIcon : <BiTrash />}
+          onClick={clearOnClickBtn}
+        >
+          {clearTextBtn ? clearTextBtn : "پاک کردن"}
+        </Button>
+      )}
+    </section>
   );
 };
 

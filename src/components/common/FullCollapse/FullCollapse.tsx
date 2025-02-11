@@ -1,7 +1,7 @@
 "use client";
+import { FC } from "react";
 
 import { Collapse } from "antd";
-import { FC } from "react";
 import { GoDash, GoPlus } from "react-icons/go";
 
 import "./FullCollapse.css";

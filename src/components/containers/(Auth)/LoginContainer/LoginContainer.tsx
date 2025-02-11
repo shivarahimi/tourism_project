@@ -1,7 +1,7 @@
 // base
 import { FC } from "react";
 // components
-import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
+// import { FullButton } from "#/src/components/common/Form/CustomeButton/CustomeButton";
 import { TextInput } from "#/src/components/common/Form/TextInput/TextInput";
 import { FullCheckBox } from "#/src/components/common/Form/FullCheckBox/FullCheckBox";
 
@@ -30,12 +30,14 @@ const LoginContainer: FC = () => {
         className=" mb-6 mt-1"
       />
       {/* <Button htmlType="submit">login</Button> */}
-      <FullButton
+      {/* <FullButton
         text="ورود"
         className="mt-8 mb-4 flex justify-center"
         dataType={dataTypePageEnum.login}
-      />
+      /> */}
       {/* <FullButton text="ورود" className="w-[80%] mt-8" /> */}
+      {/* <CheckBox name="rememberCheck" className=" mb-6 mt-1" />
+      <Button htmlType="submit">login</Button> */}
     </section>
   );
 };

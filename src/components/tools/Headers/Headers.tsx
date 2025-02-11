@@ -61,7 +61,8 @@ const Headers: FC = () => {
                   <li key={subItem.id} className="relative group">
                     <Link
                       href={subItem.href}
-                      className="block px-4 py-2 text-white hover:underline hover:decoration-1 underline-offset-4 hover:underline-offset-2 transition-all duration-500"
+                      className="block px-4 py-2 text-white 
+                      hover:underline hover:decoration-1 underline-offset-4 hover:underline-offset-2 transition-all duration-500"
                     >
                       {subItem.title}
                     </Link>
