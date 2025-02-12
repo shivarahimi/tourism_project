@@ -1,12 +1,11 @@
 // base
 import { FC } from "react";
 // components
-// import { FullButton } from "#/src/components/common/Form/CustomeButton/CustomeButton";
-import { TextInput } from "#/src/components/common/Form/TextInput/TextInput";
 import { FullCheckBox } from "#/src/components/common/Form/FullCheckBox/FullCheckBox";
+import { TextInput } from "#/src/components/common/Form/TextInput/TextInput";
+import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 
 // core
-import { dataTypePageEnum } from "#/src/core/enums/dataTypePage.enum";
 import { textInputType } from "#/src/core/enums/textInput-type.enum";
 
 const LoginContainer: FC = () => {
@@ -16,18 +15,26 @@ const LoginContainer: FC = () => {
       <TextInput
         name="userName"
         placeholder="نام شما"
-        classNames="border-b-white h-[50px] w-[100%] !text-black"
+        classNames="rounded-none  mb-2 textInput"
       />
+
       <TextInput
         name="password"
         placeholder="پسورد"
-        classNames="border-b-white h-[50px] w-[100%] !text-black"
+        classNames="rounded-none  mb-2 textInput"
         type={textInputType.password}
       />
+
       <FullCheckBox
         name="rememberCheck"
         text="مرا بخاطر بسپار"
         className=" mb-6 mt-1"
+      />
+      <FullButton
+        text="ورود"
+        className="mt-6 mr-2 px-8 py-6"
+        hasBaseBtn
+        type="primary"
       />
       {/* <Button htmlType="submit">login</Button> */}
       {/* <FullButton
