@@ -3,9 +3,9 @@ import { FC } from "react";
 // components
 import { FullCheckBox } from "#/src/components/common/Form/FullCheckBox/FullCheckBox";
 import { TextInput } from "#/src/components/common/Form/TextInput/TextInput";
+import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 
 // core
-import { FullButton } from "#/src/components/common/Form/FullButton/FullButton";
 import { textInputType } from "#/src/core/enums/textInput-type.enum";
 
 const LoginContainer: FC = () => {
